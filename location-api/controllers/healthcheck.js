@@ -6,7 +6,7 @@ async function get(req, res, next){
         }catch(err){
             return res.status(400).json([{"Connection to ______": false}])
         }
-        res.status(200).json('Success.');
+        res.status(200).json(`Connection to api is Success.`);
 
     }catch(err){
         console.log(err);        
@@ -15,4 +15,4 @@ async function get(req, res, next){
 
 }
 
-module.exports.get = get;
+exports.get = get;

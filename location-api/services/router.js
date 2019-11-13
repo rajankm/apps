@@ -1,8 +1,11 @@
 const express = require('express'),
     router = new express.Router(),
-    comm = require('../controllers/locationApi'),
-    userdetails = require('../controllers/healthcheck');
-    router.route('/healthCheckConnections').get(userdetails.get);
-    router.route('/comm/data/commapi').post(comm.post);
+
+    locationApi = require('../controllers/locationApi.js'),
+    healthcheck = require('../controllers/healthcheck.js');
+    
+    router.route('/healthCheckConnections').get(healthcheck.get);
+    router.route('/pincode/1/:pincode').get(locationApi.get);
+    router.route('/pincode/0/:pincode').get(locationApi.getPincodes);
 
     module.exports = router;

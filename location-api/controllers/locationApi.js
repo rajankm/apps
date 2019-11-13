@@ -1,44 +1,49 @@
-const pincodeModel = require('../models/PincodeModelFastCSV'),
+const pincodeModel = require('../models/PincodeModelFastCSV.js'),
     logger = require('../util/log4js');
 exports.getAllPincodes = (req, res) =>{
    pincodeModel.getAll(req, res);
 };
-exports.getPincodeDetails = (req, res) =>{
+exports.get = (req, res) =>{
     const pincode = req.params.pincode;
-    pincodeModel.getPincodeDetails(pincode,(err, pincodeDetail)=>{
+    logger.debugLogger('Pincode request for:'+pincode);
+    pincodeModel.getPincode(pincode,(err, pincodeDetail)=>{
         if(err){
             res.status(404);
             res.send('Error while fetching data:');
-            console.log('Error while fetching data:',err);
+            logger.errorLogger('Error while fetching data:',err);
         }  else {
             res.status(200);
             if(!pincodeDetail){
                 res.status(404);
+                loggeer.debugLogger('No data found for Pincode:'+pincode);
             }
+            logger.debugLogger('Data found for Pincode:'+pincode+' as below:\n'+JSON.stringify(pincodeDetail));
             res.setHeader('Content-Type', 'application/json');
             res.send(pincodeDetail);
         }
-        
     });
 };
-exports.post = (req, res) =>{
+exports.getPincodes = (req, res) =>{
     const pincode = req.params.pincode;
-    pincodeModel.getPincodeDetail(pincode,(err, pincodeDetail)=>{
+    logger.debugLogger('Pincode request for:'+pincode);
+    pincodeModel.getPincodes(pincode,(err, pincodeDetail)=>{
         if(err){
             res.status(404);
             res.send('Error while fetching data:');
-            console.log('Error while fetching data:',err);
+            logger.errorLogger('Error while fetching data:',err);
         }  else {
             res.status(200);
             if(!pincodeDetail){
                 res.status(404);
+                loggeer.debugLogger('No data found for Pincode:'+pincode);
             }
+            logger.debugLogger('Data found for Pincode:'+pincode+' as below:\n'+pincodeDetail);
             res.setHeader('Content-Type', 'application/json');
             res.send(pincodeDetail);
         }
-        
     });
 };
+
 exports.getFile = (req, res)=>{
     pincodeModel.getFile((readerFilePath)=>{
         console.log(readerFilePath);
