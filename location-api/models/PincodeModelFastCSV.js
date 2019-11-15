@@ -7,29 +7,39 @@ var PropertiesReader = require('properties-reader');
 var prop = PropertiesReader('../location-api/resource.properties');
 var readerFilePath = prop.get('file.dir')+path.sep+prop.get('pincode.filename').toString();
 
-exports.getPincode = (pincode, cb)=>{
+exports.getPincode = async (pincode, cb)=>{
     var fileReader = new FileReader(readerFilePath);
-    var pinPos=-1;
-    fileReader.readHeader((err, line)=>{
+    var header, pinPos=-1;
+    await fileReader.readHeader((err, line)=>{
         if(err){
             logger.errorLogger(err);
             return cb(err, null);
         }
-        var header = line.split(',');
+        header = line.split(',');
         pinPos = header.findIndex(findPincode);
+
     }); 
     new Promise((resolve, reject)=>{
+        var headerJson={}
         fileReader.on('data', data=>{
-            var pin = data.toString().split(',')[pinPos];
+            var dataArray = data.toString().split(',');
+            var pin = dataArray[pinPos];
             if(pin == pincode){
                 fileReader.stream.close();
-                resolve(data);
+                var i=0;
+                header.forEach(key => {
+                    headerJson[key]=dataArray[i++];
+                });
+                resolve(headerJson);
             }
         });
+        fileReader.on('end',()=>{
+            logger.debugLogger('File end event invoked.');
+            resolve(headerJson);
+        });
     }).then(data=>{
-        return cb(null, data.toString());
+        return cb(null, data);
     });
-
 }
 
 logger.debugLogger(`Reading Pincode from file:${readerFilePath}`);

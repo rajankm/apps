@@ -17,7 +17,7 @@ class FileReader extends EventEmitter{
         this.buff = Buffer.alloc(0);
         this.lineBuffs = ['\r\n', '\r', '\n'].map(a => Buffer.from(a));
     }
-   readHeader(cb){ 
+  async readHeader(cb){ 
         lineReader.open(this.file, (err, reader)=>{
             if(err){
                 return cb(err, null);
@@ -33,7 +33,7 @@ class FileReader extends EventEmitter{
         });
     }
 
-    onData(data){
+    async onData(data){
         this.buff = Buffer.concat([this.buff, data]);
 
         do{

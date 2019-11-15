@@ -8,13 +8,12 @@ exports.get = (req, res) =>{
     logger.debugLogger('Pincode request for:'+pincode);
    
     pincodeModel.getPincode(pincode, (err, pincodeDetail)=>{
-       new Promise((resolve, reject)=>{
+        new Promise((resolve, reject)=>{
             if(err){
                 reject(err);
-            }else if(pincodeDetail.length<1) {
+            }else if(Object.keys(pincodeDetail).length<1) {
                 logger.debugLogger('No data found for Pincode:'+pincode);
             }else{
-                
                 logger.debugLogger('Data found for Pincode:'+pincode+' as below:\n'+
                                             JSON.stringify(pincodeDetail));
             }
@@ -25,7 +24,7 @@ exports.get = (req, res) =>{
        }).catch(err=>{
             res.status(404);
             res.send('Error while fetching data:');
-            logger.errorLogger('Error while fetching data:',err);
+            logger.errorLogger(`Error while fetching data:${err}`);
        });
         // res.setHeader('Content-Type', 'application/json');
           
