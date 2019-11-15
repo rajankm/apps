@@ -31,26 +31,32 @@ exports.get = (req, res) =>{
     });
 };
 exports.getPincodes = (req, res) =>{
-    const pincode = req.params.pincode;
+    var pincode = req.params.pincode;
     logger.debugLogger('Pincode request for:'+pincode);
-    pincodeModel.getPincodes(pincode,(err, pincodeDetail)=>{
-        if(err){
+   
+    pincodeModel.getPincodes(pincode, (err, pincodeDetail)=>{
+        new Promise((resolve, reject)=>{
+            if(err){
+                reject(err);
+            }else if(Object.keys(pincodeDetail).length<1) {
+                logger.debugLogger('No data found for Pincode:'+pincode);
+            }else{
+                //logger.debugLogger('Data found for Pincode:'+pincode+' as below:\n'+
+                  //                          JSON.stringify(pincodeDetail));
+            }
+            resolve(pincodeDetail);
+       }).then(value=>{
+            res.status(200);    
+            res.send(value);
+       }).catch(err=>{
             res.status(404);
             res.send('Error while fetching data:');
-            logger.errorLogger('Error while fetching data:',err);
-        }  else {
-            res.status(200);
-            if(!pincodeDetail){
-                res.status(404);
-                loggeer.debugLogger('No data found for Pincode:'+pincode);
-            }
-            logger.debugLogger('Data found for Pincode:'+pincode+' as below:\n'+pincodeDetail);
-            res.setHeader('Content-Type', 'application/json');
-            res.send(pincodeDetail);
-        }
+            logger.errorLogger(`Error while fetching data:${err}`);
+       });
+        // res.setHeader('Content-Type', 'application/json');
+          
     });
 };
-
 exports.getFile = (req, res)=>{
     pincodeModel.getFile((readerFilePath)=>{
         console.log(readerFilePath);

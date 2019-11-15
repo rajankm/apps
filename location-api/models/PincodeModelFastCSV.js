@@ -42,50 +42,41 @@ exports.getPincode = async (pincode, cb)=>{
     });
 }
 
-logger.debugLogger(`Reading Pincode from file:${readerFilePath}`);
-exports.getPincodes = (pincode, callback)=>{
-    var matchedPincodes=[];
-    fs.createReadStream(readerFilePath)
-        .pipe(csv.parse({headers: true}))
-        .on('data', row =>{
-            if(row.pincode == pincode){
-                matchedPincodes.push(row);
-            }
-        })
-        .on('error',(err)=>{
-            return callback(err, null);
-        })
-        .on('end', (rowCount)=>{
-            return callback(null, JSON.parse(JSON.stringify(matchedPincodes)));
-        });
-}
+exports.getPincodes = async (pincode, cb)=>{
+    var fileReader = new FileReader(readerFilePath);
+    var header, pinPos=-1;
+    await fileReader.readHeader((err, line)=>{
+        if(err){
+            logger.errorLogger(err);
+            return cb(err, null);
+        }
+        header = line.split(',');
+        pinPos = header.findIndex(findPincode);
 
-/*
-exports.getPincode = async (pincode, callback)=>{
-    var matchedPincode=[];
-    try{
-        var readStream = fs.createReadStream(readerFilePath);
-        //fs.createReadStream(readerFilePath)
-            readStream.pipe(csv.parse({headers: true}))
-            .on('data', (row) =>{console.log(row);
-                if(row.pincode == pincode){
-                    matchedPincode.push(row);   
-                    //readStream.close();                    
-                    //TODO: close the read stream here, Bcz only one data required.
-                }
-            })
-            .on('error',(err)=>{
-                logger.errorLogger(err);
-                return callback(err, null);
-            })
-            .on('end', (rowCount)=>{
-                return callback(null, JSON.parse(JSON.stringify(matchedPincode)));
-            });
-    }catch(e){
-        logger.errorLogger(e);
-    }   
+    }); 
+    new Promise((resolve, reject)=>{
+        var jsonData=[];
+        fileReader.on('data', data=>{
+            var dataArray = data.toString().split(',');
+            var pin = dataArray[pinPos];
+            if(pin == pincode){
+                //fileReader.stream.close();
+                var json={}, i=0;
+                header.forEach(key => {
+                    json[key]=dataArray[i++];
+                });
+                jsonData.push(json);
+            }
+            //resolve(jsonData);
+        });
+        fileReader.on('end',()=>{
+            logger.debugLogger('File end event invoked.');
+            resolve(jsonData);
+        });
+    }).then(data=>{
+        return cb(null, data);
+    });
 }
-*/
 exports.getFile = (callback)=>{
     return readerFilePath;
 };
