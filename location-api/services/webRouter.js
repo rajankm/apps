@@ -5,7 +5,6 @@ const express = require('express'),
     healthcheck = require('../controllers/healthcheck.js');
     
     router.route('/healthCheckConnections').get(healthcheck.get);
-    router.route('/pincode/1/:pincode').get(locationApi.get);
-    router.route('/pincode/0/:pincode').get(locationApi.getPincodes);
-
+    router.route('/home').get(healthcheck.home);
+    router.route('/er').get(healthcheck.err);
     module.exports = router;

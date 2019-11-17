@@ -6,27 +6,75 @@ const fs = require('fs'),
 var PropertiesReader = require('properties-reader');
 var prop = PropertiesReader('../location-api/resource.properties');
 var readerFilePath = prop.get('file.dir')+path.sep+prop.get('pincode.filename').toString();
-
-exports.getPincode = async (pincode, cb)=>{
-    var fileReader = new FileReader(readerFilePath);
-    var header, pinPos=-1;
-    await fileReader.readHeader((err, line)=>{
+exports.getPincode = (pincode, cb)=>{
+    let fileReader = new FileReader(readerFilePath);
+    getHeader(fileReader, (err, header, pinPos)=>{
         if(err){
-            logger.errorLogger(err);
-            return cb(err, null);
+            return cb(err);
+        }
+        getSingleData(fileReader, header, pinPos, pincode, (err, data)=>{
+            return cb(err, data);
+        } );
+    });
+}
+
+exports.getPincodes = (pincode, cb)=>{
+    let fileReader = new FileReader(readerFilePath);
+    getHeader(fileReader, (err, header, pinPos)=>{
+        if(err){
+            return cb(err);
+        }
+        getData(fileReader, header, pinPos, pincode, (err, data)=>{
+            return cb(err, data);
+        } );
+    });
+    
+}
+getHeader = (fileReader, cb)=>{
+    let header, pinPos=-1;
+    fileReader.readHeader((err, line)=>{
+        if(err){
+            return cb(err);
         }
         header = line.split(',');
         pinPos = header.findIndex(findPincode);
-
+        return cb(null, header, pinPos);
     }); 
+}
+
+getData = (fileReader, header, pinPos, pincode, cb)=>{
     new Promise((resolve, reject)=>{
-        var headerJson={}
+        let jsonData=[];
         fileReader.on('data', data=>{
-            var dataArray = data.toString().split(',');
-            var pin = dataArray[pinPos];
+            let dataArray = data.toString().split(',');
+            let pin = dataArray[pinPos];
+            if(pin == pincode){
+                let json={}, i=0;
+                header.forEach(key => {
+                    json[key]=dataArray[i++];
+                });
+                jsonData.push(json);
+            }
+        });
+        fileReader.on('end',()=>{
+            logger.debugLogger('File end event invoked.');
+            resolve(jsonData);
+        });
+    }).then(data=>{
+        return cb(null, data);
+    }).catch(err=>{
+        return cb(err);
+    });
+}
+getSingleData = (fileReader, header, pinPos, pincode, cb)=>{
+    new Promise((resolve, reject)=>{
+        let headerJson={}
+        fileReader.on('data', data=>{
+            let dataArray = data.toString().split(',');
+            let pin = dataArray[pinPos];
             if(pin == pincode){
                 fileReader.stream.close();
-                var i=0;
+                let i=0;
                 header.forEach(key => {
                     headerJson[key]=dataArray[i++];
                 });
@@ -39,47 +87,13 @@ exports.getPincode = async (pincode, cb)=>{
         });
     }).then(data=>{
         return cb(null, data);
-    });
-}
-
-exports.getPincodes = async (pincode, cb)=>{
-    var fileReader = new FileReader(readerFilePath);
-    var header, pinPos=-1;
-    await fileReader.readHeader((err, line)=>{
-        if(err){
-            logger.errorLogger(err);
-            return cb(err, null);
-        }
-        header = line.split(',');
-        pinPos = header.findIndex(findPincode);
-
-    }); 
-    new Promise((resolve, reject)=>{
-        var jsonData=[];
-        fileReader.on('data', data=>{
-            var dataArray = data.toString().split(',');
-            var pin = dataArray[pinPos];
-            if(pin == pincode){
-                //fileReader.stream.close();
-                var json={}, i=0;
-                header.forEach(key => {
-                    json[key]=dataArray[i++];
-                });
-                jsonData.push(json);
-            }
-            //resolve(jsonData);
-        });
-        fileReader.on('end',()=>{
-            logger.debugLogger('File end event invoked.');
-            resolve(jsonData);
-        });
-    }).then(data=>{
-        return cb(null, data);
+    }).catch(err=>{
+        return cb(err);
     });
 }
 exports.getFile = (callback)=>{
     return readerFilePath;
-};
+}
 function findPincode(element){
     return element=='pincode';
   }

@@ -1,6 +1,5 @@
 const webServer = require('./services/web-server.js'),
-        logger = require('./util/log4js');
-        //logger = log4js.getLogger();
+        logger = require('./util/log4js.js');
 async function startup(){
 try{
     logger.debugLogger('Starting application.');
@@ -22,6 +21,7 @@ async function shutdown(e){
     }
 }
 process.on('uncaughtException', err=>{
-    logger.errorLogger(err);
-    shutdown(err);
+    logger.errorLogger(`UncaughtException:${err}`);
+    
+    //shutdown(err);
 });

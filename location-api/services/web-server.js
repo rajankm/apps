@@ -1,31 +1,30 @@
 const http = require('http'),
         express = require('express'),
-        webServerConfig = require('../config/web-server'),
-        router = require('./router'),
+        webServerConfig = require('../config/web-server.js'),
+        apiRouter = require('./apiRouter.js'),
+        webRouter = require('./webRouter.js'),
         logger = require('../util/log4js.js');
 let httpServer;
-function initialize(){
+ exports.initialize = ()=>{
     return new Promise((resolve, reject)=>{
-        const app = express();
+        let app = express();
         httpServer = http.createServer(app);
         httpServer.timeout = 900000;
-        app.use('/api', router);
-        app.get('/healthCheckConnections', async(req, res)=>{
-            res.end('Success.');
-        });
+        app.set('view engine', 'ejs');
+        app.use('/', webRouter);
+        app.use('/api', apiRouter);        
+
         httpServer.listen(webServerConfig.port, err=>{
             if(err){
                 logger.errorLogger(err);
                 reject(err);
                 return;
             }
-            logger.consoleLogger(`Web server listning on localhost:${webServerConfig.port}`);
+            logger.debugLogger(`Web server listning on localhost:${webServerConfig.port}`);
             resolve();
         });
     });
 }
-exports.initialize = initialize;
-
 function close(){
     return new Promise((resolve, reject)=>{
         httpServer.close((err)=>{

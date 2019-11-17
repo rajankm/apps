@@ -27,23 +27,23 @@ var logger_error = log4js.getLogger('error');// for all type of errors, warn and
 var console_logger = log4js.getLogger('out');
 
 exports.debugLogger =  (data)=>{
-    //logger_debug.debug(data);
+    logger_debug.debug(data);
     console_logger.trace(data);
 }
 exports.infoLogger = (data)=>{
-    //logger_info.info(data);
+    logger_info.info(data);
     console_logger.trace(data);
 }
 exports.warnLogger = (data)=>{
-    //logger_error.warn(data);
+    logger_error.warn(data);
     console_logger.trace(data);
 }
 exports.errorLogger = (data)=>{
-    //logger_error.error(data);
+    logger_error.error(data);
     console_logger.error(data);
 }
 exports.fatalLogger = (data)=>{
-    //logger_error.fatal(data);
+    logger_error.fatal(data);
     console_logger.trace(data);
 }
 exports.consoleLogger = (data)=>{
@@ -52,9 +52,10 @@ exports.consoleLogger = (data)=>{
 /**
  * Some Examples
  */
-logger_debug.trace('Trace log in fileServices');
+/*logger_debug.trace('Trace log in fileServices');
 logger_debug.debug('Debug log in fileServices');
 logger_info.info('Info log in fileServices');
 logger_error.warn('Warn log in fileServices');
 logger_error.error('Error log in fileServices');
 logger_error.fatal('Fatal log in fileServices');
+*/
