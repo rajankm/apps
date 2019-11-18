@@ -16,55 +16,39 @@ class FileReader extends EventEmitter{
         this.buff = Buffer.alloc(0);
         this.lineBuffs = ['\r\n', '\r', '\n'].map(a => Buffer.from(a));
     }
-  async readHeader(cb){ 
-     let exists = fs.existsSync(this.file);
-     if(!exists){
-         return cb(new Error(`File/Dir:${this.file} doesn't exist.`));
-     }
-      new Promise((resolve, reject)=>{
-       try{
-        lineReader.open(this.file, (err, reader)=>{
-            if(err){
-                reject(err);
-            }
-            if(reader.hasNextLine()){
-                reader.nextLine((err, line)=>{
-                resolve(line);
-            });
+    readHeader(cb){
+        new Promise((resolve, reject)=>{
+            fileExistsSync(this.file, (err, exists)=>{
+                if(err){
+                    reject(err);
+                }
+                resolve(exists);
+            });   
+        }).then(exists=>{
+            if(exists){
+                lineReader.open(this.file, (err, reader)=>{
+                    if(err){
+                        return cb(err);
+                    }
+                    if(reader.hasNextLine()){
+                        reader.nextLine((err,line)=>{
+                            if(err){
+                                return cb(err);
+                            }
+                            return cb(null, line);
+                        });
+                    } else{
+                        return cb(new Error(`No header defined in file:${this.file}`));     
+                    }    
+                });
             } else{
-                reject(new Error('Empty File:', this.file));
+                return cb(new Error(`File/Dir: ${this.file} not exist any more.`));
             }
+        }).catch(err=>{
+            return cb(err);
         });
-    }catch(e){
-        console.log(e);
     }
-      }).then(data=>{
-        return cb(null, data);
-      }).catch(err=>{
-        return cb(err);
-      });
-    /*new Promise((resolve, reject)=>{
-        
-        lineReader.open(this.file, (err, reader)=>{
-            if(err){
-                reject(err);
-            }
-            if(reader.hasNextLine()){
-                reader.nextLine((err, line)=>{
-                resolve(line);
-            });
-            } else{
-                logger.infoLogger('Empty File:', this.file);
-                reject(new Error('Empty File:', this.file));
-            }
-        });
-    }).then(data=>{
-        return cb(null, data);
-    }).catch(err=>{
-        return cb(err, null);
-    });*/
-}
-
+   
     async onData(data){
         this.buff = Buffer.concat([this.buff, data]);
         do{
@@ -88,4 +72,11 @@ class FileReader extends EventEmitter{
         this.emit('end');
     }
 };
+function fileExistsSync(path, cb){
+    try{
+        return cb(null, fs.statSync(path).isFile());
+    }catch(e){
+        return cb(e, false);
+    }
+}
 module.exports = FileReader;

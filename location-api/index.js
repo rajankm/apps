@@ -21,7 +21,6 @@ async function shutdown(e){
     }
 }
 process.on('uncaughtException', err=>{
-    logger.errorLogger(`UncaughtException:${err}`);
-    
+    logger.errorLogger(`UncaughtException:\n${err}`);
     //shutdown(err);
 });

@@ -24,7 +24,7 @@ exports.get = (req, res) =>{
        }).catch(err=>{
             res.status(404);
             res.send('Error while fetching data.');
-            logger.errorLogger(`Error while fetching data:\n${err}`);
+            logger.errorLogger(`Error while fetching data:\n${err.stack || err}`);
        });
     });
 };

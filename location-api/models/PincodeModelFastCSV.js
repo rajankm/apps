@@ -24,6 +24,7 @@ exports.getPincodes = (pincode, cb)=>{
         if(err){
             return cb(err);
         }
+        
         getData(fileReader, header, pinPos, pincode, (err, data)=>{
             return cb(err, data);
         } );
@@ -38,6 +39,9 @@ getHeader = (fileReader, cb)=>{
         }
         header = line.split(',');
         pinPos = header.findIndex(findPincode);
+        if(pinPos==-1){
+            return cb(new Error(`Can't find text(pincode) in header.`));
+        }
         return cb(null, header, pinPos);
     }); 
 }
@@ -57,7 +61,7 @@ getData = (fileReader, header, pinPos, pincode, cb)=>{
             }
         });
         fileReader.on('end',()=>{
-            logger.debugLogger('File end event invoked.');
+            logger.debugLogger(`File end event invoked.`);
             resolve(jsonData);
         });
     }).then(data=>{
@@ -71,7 +75,7 @@ getSingleData = (fileReader, header, pinPos, pincode, cb)=>{
         let headerJson={}
         fileReader.on('data', data=>{
             let dataArray = data.toString().split(',');
-            let pin = dataArray[pinPos];
+            let pin = dataArray[pinPos]; 
             if(pin == pincode){
                 fileReader.stream.close();
                 let i=0;
