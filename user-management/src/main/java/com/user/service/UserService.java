@@ -10,4 +10,5 @@ import com.user.model.User;
 public interface UserService {
 	public User save(User user)throws EntityPersistanceException;
 	public User getByCredential(String username, String password)throws EntityNotFoundException;
+	public User findByUsername(String email);
 }

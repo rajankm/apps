@@ -1,5 +1,6 @@
 package com.user.dao;
 
+import java.io.Serializable;
 import java.util.logging.Logger;
 
 import javax.persistence.EntityManager;
@@ -7,10 +8,12 @@ import javax.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.user.dao.repository.UserRepository;
 import com.user.exception.EntityPersistanceException;
 import com.user.model.User;
 @Repository
@@ -21,18 +24,18 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	//private SessionFactory sessionFactory;
 	private EntityManager entityManager;
+	@Autowired
+	private UserRepository uesrRepository;
 
 	@Override
 	@Transactional(propagation= Propagation.REQUIRES_NEW, rollbackFor = EntityPersistanceException.class)
-	public User save(User user) throws EntityPersistanceException {
+	public Serializable save(User user) throws EntityPersistanceException {
 		Transaction transaction = null;
 		try {
 			Session session = entityManager.unwrap(Session.class);
-			//Session session = sessionFactory.getCurrentSession();
-			//transaction = session.beginTransaction();
-			String result = (String)session.save(user);
+			Serializable id = (String)session.save(user);
 			session.close();
-			return new User();
+			return id;
 		}catch(Exception e) {
 			throw new EntityPersistanceException(user.getEmail());
 		} finally {
@@ -41,7 +44,12 @@ public class UserDaoImpl implements UserDao {
 			}
 		}
 	}
-
+	
+	public User findByUsername(String email) {
+		Example<User> example  = Example.of(new User(email));
+		return uesrRepository.findOne(example).get();
+	}
+	
 	@Override
 	public User getByCredential(String username, String password) {
 		// TODO Auto-generated method stub

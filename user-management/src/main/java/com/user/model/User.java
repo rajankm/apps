@@ -28,7 +28,7 @@ public class User implements EaoEntity {
 	@Column(name="LAST_NAME", nullable=false)
 	private String lastName;
 	
-	@Column(name="EMAIL", nullable=false)
+	@Column(name="EMAIL", nullable=false, unique = true)
 	private String email;
 	
 	@Column(name="PASSWORD", nullable=false)
@@ -36,7 +36,14 @@ public class User implements EaoEntity {
 	
 	@ManyToOne
 	private Role role;
+
+	public User() {
+	}
 	
+	public User(String email) {
+		super();
+		this.email = email;
+	}
 	public String getId() {
 		return id;
 	}
@@ -66,6 +73,13 @@ public class User implements EaoEntity {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
 	}
 	@Override
 	public String toString() {
