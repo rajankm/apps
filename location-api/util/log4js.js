@@ -1,17 +1,17 @@
-
+const path = require('path');
 var log4js = require('log4js');
 var PropertiesReader = require('properties-reader');
 var prop = PropertiesReader('./resource.properties');
 //var prop = PropertiesReader('../resource.properties');// for local run
-var logPath = prop.get('log.path');
+var logPath = prop.get('log.path')+path.sep;
 //var logPath = '/home/rajan/Stuffs/Project/npp-apps/logs/'
 log4js.configure({
     appenders: {
-        out: { type: 'console' }, 
-        default: { type: 'dateFile', filename: logPath+'default', pattern: "-dd-MM.log", alwaysIncludePattern: true }, 
-        info: { type: 'dateFile', filename: logPath+'location-api-info',pattern:"-dd-MM.log", alwaysIncludePattern: true}, 
-        debug: { type: 'dateFile', filename: logPath+'location-api-debug',pattern:"-dd-MM.log", alwaysIncludePattern: true}, 
-        error: { type: 'dateFile', filename: logPath+'locatoin-api-error', pattern:"-dd-MM.log", alwaysIncludePattern: true}, 
+        out: { type: 'console' },
+        default: { type: 'dateFile', filename: logPath+'default', pattern: "-dd-MM.log", alwaysIncludePattern: true },
+        info: { type: 'dateFile', filename: logPath+'location-api-info',pattern:"-dd-MM.log", alwaysIncludePattern: true},
+        debug: { type: 'dateFile', filename: logPath+'location-api-debug',pattern:"-dd-MM.log", alwaysIncludePattern: true},
+        error: { type: 'dateFile', filename: logPath+'locatoin-api-error', pattern:"-dd-MM.log", alwaysIncludePattern: true},
     },
     categories: {
       default: { appenders: ['out','default'], level: 'trace' },
