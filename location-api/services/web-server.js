@@ -10,9 +10,10 @@ let httpServer;
         let app = express();
         httpServer = http.createServer(app);
         httpServer.timeout = 900000;
+        app.use(express.static('views'));
         app.set('view engine', 'ejs');
         app.use('/', webRouter);
-        app.use('/api', apiRouter);        
+        app.use('/api', apiRouter);
 
         httpServer.listen(webServerConfig.port, err=>{
             if(err){
