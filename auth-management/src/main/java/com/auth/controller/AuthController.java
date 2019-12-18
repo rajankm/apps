@@ -1,50 +1,39 @@
 package com.auth.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.DisabledException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.auth.config.JWTTokenUtil;
 import com.auth.model.JWTRequest;
-import com.auth.model.JWTResponse;
+import com.auth.model.dto.UserDto;
+import com.auth.service.AuthUserDetailsService;
 
 @RestController
-public class AuthController {
+@RequestMapping(path = { "/authenticate" })
+public class AuthController extends GenericAuthController {
 
 	@Autowired
-	private AuthenticationManager authenticationManager;
-	
-	@Autowired
-	private UserDetailsService userDetailsService;
-	
-	@Autowired
-	private JWTTokenUtil jwtTokenUtil;
-	
-	@PostMapping("/authenticate")
-	public ResponseEntity<?> createAuthenticationToken(@RequestBody JWTRequest jwtRequest) throws Exception{
-		Object details = authenticate(jwtRequest.getUsername(), jwtRequest.getPassword()).getDetails();
-		final UserDetails userDetails = userDetailsService.loadUserByUsername(jwtRequest.getUsername());
-		
-		String jwtToken = jwtTokenUtil.generateToken(userDetails);
-		return ResponseEntity.ok(new JWTResponse(jwtToken));
-		
+	private AuthUserDetailsService authUserDetails;
+
+	@PostMapping("/user")
+	public ResponseEntity<?> createUserAuthToken(@RequestBody JWTRequest jwtRequest) throws Exception {
+		Authentication authentication = authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
+		String username = authentication.getName();
+		ResponseEntity.BodyBuilder responseEntity = ResponseEntity.status(HttpStatus.OK);
+		String jwtToken = jwtTokenUtil.generateToken(username);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.set(HttpHeaders.AUTHORIZATION, jwtToken);
+		responseEntity = responseEntity.headers(headers);
+		final UserDto user = authUserDetails.getUserDetails(jwtRequest.getUsername());
+		return responseEntity.body(user);
+
 	}
-	private Authentication authenticate(String username, String password)throws Exception {
-		try {
-			return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
-		} catch (DisabledException e) {
-			throw new Exception("USER_DISABLED", e);
-		} catch (BadCredentialsException e) {
-			throw new Exception("INVALID_CREDENTIALS", e);
-		}
-	}
+
 }

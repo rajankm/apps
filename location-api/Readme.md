@@ -1,3 +1,4 @@
+change the file repository in resource.properties
 to Run the application.
 Step-1: cd location-api/
 step-2: node index.js

@@ -1,4 +1,4 @@
-package com.auth.config;
+package com.auth.util;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -49,9 +49,9 @@ public class JWTTokenUtil implements Serializable {
 		}
 
 		//generate token for user
-		public String generateToken(UserDetails userDetails) {
+		public String generateToken(String username) {
 			Map<String, Object> claims = new HashMap<String, Object>();
-			return doGenerateToken(claims, userDetails.getUsername());
+			return doGenerateToken(claims, username);
 		}
 
 		//while creating the token -
