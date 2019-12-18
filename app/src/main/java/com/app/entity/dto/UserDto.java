@@ -5,9 +5,16 @@ public class UserDto {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String username;
 	private String password;
 	
 	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getId() {
 		return id;
 	}
