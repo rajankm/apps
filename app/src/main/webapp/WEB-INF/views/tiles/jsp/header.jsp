@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span> 
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/app/home" style="font-size: 22px;"><span class="label label-success">W3lessons</span></a>
+				<a class="navbar-brand" href="/app/home" style="font-size: 22px;"><span class="label label-success">My Application</span></a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<form class="navbar-form navbar-right" role="search" action="search" method="GET">

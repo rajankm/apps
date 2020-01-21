@@ -1,0 +1,901 @@
+2020-01-21 13:19:44,772 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting AuthManagementApplication on ubuntu-pc with PID 11309 (/media/rajan/HardDrive/project/repo/apps/auth-management/target/classes started by rajan in /media/rajan/HardDrive/project/repo/apps/auth-management)
+2020-01-21 13:19:44,787 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: test
+2020-01-21 13:19:45,211 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-01-21 13:19:45,215 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-01-21 13:19:49,818 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2020-01-21 13:19:49,852 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2020-01-21 13:19:49,854 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-01-21 13:19:49,855 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-21 13:19:50,057 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-01-21 13:19:50,059 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4838 ms
+2020-01-21 13:19:51,240 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d939127, org.springframework.security.web.context.SecurityContextPersistenceFilter@79a68667, org.springframework.security.web.header.HeaderWriterFilter@7497f841, org.springframework.security.web.authentication.logout.LogoutFilter@524aaf1, com.auth.filter.RequestFilter@24ef05ea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9460ada, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3500a4e6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e27c4bc, org.springframework.security.web.session.SessionManagementFilter@4770e3f1, org.springframework.security.web.access.ExceptionTranslationFilter@58c6ddf9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2a5f1a56]
+2020-01-21 13:19:51,723 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-21 13:19:52,165 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2020-01-21 13:19:52,221 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2020-01-21 13:19:52,334 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2020-01-21 13:19:52,340 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AuthManagementApplication in 9.538 seconds (JVM running for 11.799)
+2020-01-21 13:22:05,764 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-21 13:22:05,767 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-21 13:22:05,800 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 32 ms
+2020-01-21 13:22:05,848 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 13:22:05,849 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 13:22:06,135 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: abc@gmai.com
+2020-01-21 13:22:06,136 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: abc@gmai.com
+2020-01-21 13:22:06,339 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: abc@gmai.com
+2020-01-21 13:22:06,339 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 13:22:06,340 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: abc@gmai.com from API.
+2020-01-21 13:22:06,341 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 13:22:07,761 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T07:52:07.509+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6996 bytes)]
+2020-01-21 13:22:08,007 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: abc@gmai.com
+2020-01-21 13:22:08,012 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 13:26:42,254 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 13:26:42,274 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 13:26:42,278 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: abc@gmail.com
+2020-01-21 13:26:42,279 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: abc@gmail.com
+2020-01-21 13:26:42,279 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: abc@gmail.com
+2020-01-21 13:26:42,280 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 13:26:42,281 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: abc@gmail.com from API.
+2020-01-21 13:26:42,282 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 13:26:42,460 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User placed in cache.
+2020-01-21 13:26:42,461 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Got user details in UserDetailsService for username: abc@gmail.com
+2020-01-21 13:26:42,634 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Processing jwtRequest: com.auth.model.JWTRequest@4ee2c26e, user: abc@gmail.com
+2020-01-21 13:26:43,097 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] For username: abc@gmail.com, JwtToken generated : eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTc5NTkzNTAyLCJpYXQiOjE1Nzk1OTM0MDJ9.S2lRqqLhOEA1CB0NRbfqZgX0juyl-sP5H2BlR2BW9BQjp7UiwFiH1RaWrLlv56f-50v1pfedjbnFzJFfUKqOyA
+2020-01-21 13:34:17,096 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 13:34:17,126 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] JWT Token is null, redirecting to the actual call.
+2020-01-21 13:34:17,131 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Authenticating jwtRequest for username: abc@gmail.com
+2020-01-21 13:34:17,131 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Authenticating for username: abc@gmail.com
+2020-01-21 13:34:17,132 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user details in UserDetailsService for username: abc@gmail.com
+2020-01-21 13:34:17,133 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Got user details in UserDetailsService for username: abc@gmail.com
+2020-01-21 13:34:17,301 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Processing jwtRequest: com.auth.model.JWTRequest@353c35e3, user: abc@gmail.com
+2020-01-21 13:34:17,304 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] For username: abc@gmail.com, JwtToken generated : eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTc5NTkzOTU3LCJpYXQiOjE1Nzk1OTM4NTd9.LOS23V3NWmvpM21GiSDHuMhu9lW1iWUxMaTOMoU6B3TsW5RUitUiM3sko7ivUtiur8FJBXtTTCvYfm7VOPveyA
+2020-01-21 13:40:20,379 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-21 13:40:20,774 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting AuthManagementApplication on ubuntu-pc with PID 11309 (/media/rajan/HardDrive/project/repo/apps/auth-management/target/classes started by rajan in /media/rajan/HardDrive/project/repo/apps/auth-management)
+2020-01-21 13:40:20,777 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-21 13:40:20,778 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: test
+2020-01-21 13:40:21,678 WARN org.apache.juli.logging.DirectJDKLog [restartedMain] The MBean registry cannot be disabled because it has already been initialised
+2020-01-21 13:40:21,720 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2020-01-21 13:40:21,725 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2020-01-21 13:40:21,729 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-01-21 13:40:21,734 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-21 13:40:21,747 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-01-21 13:40:21,747 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 956 ms
+2020-01-21 13:40:21,798 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'requestFilter' configured for use
+2020-01-21 13:40:21,984 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b8a69a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@19a553c8, org.springframework.security.web.header.HeaderWriterFilter@a2814ea, org.springframework.security.web.authentication.logout.LogoutFilter@367defcc, com.auth.filter.RequestFilter@5c5c3dd8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e85f12f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34402551, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@755ee4dc, org.springframework.security.web.session.SessionManagementFilter@3680f080, org.springframework.security.web.access.ExceptionTranslationFilter@51b6de25, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44677c5d]
+2020-01-21 13:40:22,142 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-21 13:40:22,292 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2020-01-21 13:40:22,312 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2020-01-21 13:40:22,345 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2020-01-21 13:40:22,348 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AuthManagementApplication in 1.687 seconds (JVM running for 1241.807)
+2020-01-21 13:40:22,353 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2020-01-21 14:21:33,968 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting AuthManagementApplication on ubuntu-pc with PID 13572 (/media/rajan/HardDrive/project/repo/apps/auth-management/target/classes started by rajan in /media/rajan/HardDrive/project/repo/apps/auth-management)
+2020-01-21 14:21:33,981 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-21 14:21:33,982 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: test
+2020-01-21 14:21:34,158 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-01-21 14:21:34,159 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-01-21 14:21:40,288 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2020-01-21 14:21:40,381 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2020-01-21 14:21:40,415 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-01-21 14:21:40,418 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-21 14:21:40,842 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-01-21 14:21:40,843 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6682 ms
+2020-01-21 14:21:41,058 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'requestFilter' configured for use
+2020-01-21 14:21:42,784 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c902cf5, org.springframework.security.web.context.SecurityContextPersistenceFilter@62dbe8b6, org.springframework.security.web.header.HeaderWriterFilter@220fbb70, org.springframework.security.web.authentication.logout.LogoutFilter@554a782a, com.auth.filter.RequestFilter@568f5a80, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d57fbe4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d35810, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38dffa30, org.springframework.security.web.session.SessionManagementFilter@62b85f49, org.springframework.security.web.access.ExceptionTranslationFilter@243ec66d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@656afaf4]
+2020-01-21 14:21:43,601 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-21 14:21:44,525 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-01-21 14:21:44,585 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2020-01-21 14:21:44,820 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2020-01-21 14:21:44,842 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AuthManagementApplication in 12.579 seconds (JVM running for 14.87)
+2020-01-21 14:40:02,985 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-21 14:40:02,987 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-21 14:40:03,032 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 44 ms
+2020-01-21 14:40:03,086 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 14:40:03,087 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 14:40:03,427 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: asfds
+2020-01-21 14:40:03,428 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: asfds
+2020-01-21 14:40:03,763 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: asfds
+2020-01-21 14:40:03,765 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 14:40:03,766 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: asfds from API.
+2020-01-21 14:40:03,767 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 14:40:05,585 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T09:10:05.288+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 14:40:05,833 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: asfds
+2020-01-21 14:40:05,834 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 15:33:54,442 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:54,445 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:54,459 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:54,461 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: sdfds
+2020-01-21 15:33:54,462 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:54,463 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 15:33:54,464 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: sdfds from API.
+2020-01-21 15:33:54,465 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:54,535 INFO com.auth.service.APIService [http-nio-8081-exec-3] 404 : [{"timestamp":"2020-01-21T10:03:54.517+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:54,703 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Invalid credentials for username: sdfds
+2020-01-21 15:33:54,704 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] INVALID_CREDENTIALS
+2020-01-21 15:33:55,812 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:55,813 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:55,816 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:55,817 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Authenticating for username: sdfds
+2020-01-21 15:33:55,817 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:55,817 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] User not found in cache, Getting form API.
+2020-01-21 15:33:55,818 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user for username: sdfds from API.
+2020-01-21 15:33:55,818 INFO com.auth.service.APIService [http-nio-8081-exec-4] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:55,861 INFO com.auth.service.APIService [http-nio-8081-exec-4] 404 : [{"timestamp":"2020-01-21T10:03:55.854+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:56,023 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Invalid credentials for username: sdfds
+2020-01-21 15:33:56,024 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] INVALID_CREDENTIALS
+2020-01-21 15:33:56,419 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:56,420 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:56,423 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:56,423 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Authenticating for username: sdfds
+2020-01-21 15:33:56,424 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:56,424 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] User not found in cache, Getting form API.
+2020-01-21 15:33:56,425 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user for username: sdfds from API.
+2020-01-21 15:33:56,425 INFO com.auth.service.APIService [http-nio-8081-exec-5] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:56,455 INFO com.auth.service.APIService [http-nio-8081-exec-5] 404 : [{"timestamp":"2020-01-21T10:03:56.449+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:56,594 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:56,599 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:56,612 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:56,613 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Authenticating for username: sdfds
+2020-01-21 15:33:56,615 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:56,616 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] User not found in cache, Getting form API.
+2020-01-21 15:33:56,617 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user for username: sdfds from API.
+2020-01-21 15:33:56,617 INFO com.auth.service.APIService [http-nio-8081-exec-6] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:56,623 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Invalid credentials for username: sdfds
+2020-01-21 15:33:56,624 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] INVALID_CREDENTIALS
+2020-01-21 15:33:56,652 INFO com.auth.service.APIService [http-nio-8081-exec-6] 404 : [{"timestamp":"2020-01-21T10:03:56.642+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:56,744 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:56,745 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:56,748 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:56,748 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Authenticating for username: sdfds
+2020-01-21 15:33:56,749 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:56,750 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] User not found in cache, Getting form API.
+2020-01-21 15:33:56,751 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user for username: sdfds from API.
+2020-01-21 15:33:56,751 INFO com.auth.service.APIService [http-nio-8081-exec-7] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:56,778 INFO com.auth.service.APIService [http-nio-8081-exec-7] 404 : [{"timestamp":"2020-01-21T10:03:56.770+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:56,822 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Invalid credentials for username: sdfds
+2020-01-21 15:33:56,823 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] INVALID_CREDENTIALS
+2020-01-21 15:33:56,907 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:56,908 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:56,910 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:56,911 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Authenticating for username: sdfds
+2020-01-21 15:33:56,911 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:56,912 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] User not found in cache, Getting form API.
+2020-01-21 15:33:56,913 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user for username: sdfds from API.
+2020-01-21 15:33:56,913 INFO com.auth.service.APIService [http-nio-8081-exec-8] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:56,943 INFO com.auth.service.APIService [http-nio-8081-exec-8] 404 : [{"timestamp":"2020-01-21T10:03:56.938+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:56,952 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Invalid credentials for username: sdfds
+2020-01-21 15:33:56,952 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] INVALID_CREDENTIALS
+2020-01-21 15:33:57,059 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:57,060 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:57,062 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:57,063 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Authenticating for username: sdfds
+2020-01-21 15:33:57,068 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:57,069 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] User not found in cache, Getting form API.
+2020-01-21 15:33:57,070 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user for username: sdfds from API.
+2020-01-21 15:33:57,070 INFO com.auth.service.APIService [http-nio-8081-exec-9] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:57,099 INFO com.auth.service.APIService [http-nio-8081-exec-9] 404 : [{"timestamp":"2020-01-21T10:03:57.094+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:57,111 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Invalid credentials for username: sdfds
+2020-01-21 15:33:57,112 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] INVALID_CREDENTIALS
+2020-01-21 15:33:57,275 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Invalid credentials for username: sdfds
+2020-01-21 15:33:57,277 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] INVALID_CREDENTIALS
+2020-01-21 15:33:57,282 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:57,283 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:57,290 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:57,291 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Authenticating for username: sdfds
+2020-01-21 15:33:57,291 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:57,292 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] User not found in cache, Getting form API.
+2020-01-21 15:33:57,297 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user for username: sdfds from API.
+2020-01-21 15:33:57,298 INFO com.auth.service.APIService [http-nio-8081-exec-10] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:57,321 INFO com.auth.service.APIService [http-nio-8081-exec-10] 404 : [{"timestamp":"2020-01-21T10:03:57.315+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:57,414 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:57,414 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:57,418 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:57,419 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: sdfds
+2020-01-21 15:33:57,423 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:57,428 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 15:33:57,428 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: sdfds from API.
+2020-01-21 15:33:57,429 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:57,465 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T10:03:57.459+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:57,560 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Invalid credentials for username: sdfds
+2020-01-21 15:33:57,561 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] INVALID_CREDENTIALS
+2020-01-21 15:33:57,581 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:57,582 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:57,585 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:57,586 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Authenticating for username: sdfds
+2020-01-21 15:33:57,587 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:57,587 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] User not found in cache, Getting form API.
+2020-01-21 15:33:57,588 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user for username: sdfds from API.
+2020-01-21 15:33:57,589 INFO com.auth.service.APIService [http-nio-8081-exec-2] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:57,639 INFO com.auth.service.APIService [http-nio-8081-exec-2] 404 : [{"timestamp":"2020-01-21T10:03:57.628+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:57,711 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: sdfds
+2020-01-21 15:33:57,712 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 15:33:57,833 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Invalid credentials for username: sdfds
+2020-01-21 15:33:57,834 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] INVALID_CREDENTIALS
+2020-01-21 15:33:57,944 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:57,944 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:57,947 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:57,948 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: sdfds
+2020-01-21 15:33:57,948 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:57,949 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 15:33:57,949 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: sdfds from API.
+2020-01-21 15:33:57,950 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:57,979 INFO com.auth.service.APIService [http-nio-8081-exec-3] 404 : [{"timestamp":"2020-01-21T10:03:57.974+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:58,105 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:58,106 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:58,108 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:58,108 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Authenticating for username: sdfds
+2020-01-21 15:33:58,109 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:58,109 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] User not found in cache, Getting form API.
+2020-01-21 15:33:58,110 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user for username: sdfds from API.
+2020-01-21 15:33:58,110 INFO com.auth.service.APIService [http-nio-8081-exec-4] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:58,135 INFO com.auth.service.APIService [http-nio-8081-exec-4] 404 : [{"timestamp":"2020-01-21T10:03:58.130+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:58,150 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Invalid credentials for username: sdfds
+2020-01-21 15:33:58,151 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] INVALID_CREDENTIALS
+2020-01-21 15:33:58,261 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:58,262 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:58,264 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:58,265 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Authenticating for username: sdfds
+2020-01-21 15:33:58,265 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:58,266 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] User not found in cache, Getting form API.
+2020-01-21 15:33:58,266 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user for username: sdfds from API.
+2020-01-21 15:33:58,266 INFO com.auth.service.APIService [http-nio-8081-exec-5] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:58,302 INFO com.auth.service.APIService [http-nio-8081-exec-5] 404 : [{"timestamp":"2020-01-21T10:03:58.286+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:58,308 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Invalid credentials for username: sdfds
+2020-01-21 15:33:58,309 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] INVALID_CREDENTIALS
+2020-01-21 15:33:58,429 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:58,430 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:58,433 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:58,433 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Authenticating for username: sdfds
+2020-01-21 15:33:58,434 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:58,435 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] User not found in cache, Getting form API.
+2020-01-21 15:33:58,436 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user for username: sdfds from API.
+2020-01-21 15:33:58,438 INFO com.auth.service.APIService [http-nio-8081-exec-6] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:58,464 INFO com.auth.service.APIService [http-nio-8081-exec-6] 404 : [{"timestamp":"2020-01-21T10:03:58.460+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:58,488 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Invalid credentials for username: sdfds
+2020-01-21 15:33:58,489 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] INVALID_CREDENTIALS
+2020-01-21 15:33:58,572 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:33:58,573 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:33:58,577 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:33:58,578 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Authenticating for username: sdfds
+2020-01-21 15:33:58,579 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:33:58,579 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] User not found in cache, Getting form API.
+2020-01-21 15:33:58,580 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user for username: sdfds from API.
+2020-01-21 15:33:58,580 INFO com.auth.service.APIService [http-nio-8081-exec-7] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:33:58,613 INFO com.auth.service.APIService [http-nio-8081-exec-7] 404 : [{"timestamp":"2020-01-21T10:03:58.609+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6976 bytes)]
+2020-01-21 15:33:58,644 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Invalid credentials for username: sdfds
+2020-01-21 15:33:58,644 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] INVALID_CREDENTIALS
+2020-01-21 15:33:58,775 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Invalid credentials for username: sdfds
+2020-01-21 15:33:58,776 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] INVALID_CREDENTIALS
+2020-01-21 15:34:05,270 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:05,271 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:05,272 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:05,273 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Authenticating for username: sdfds
+2020-01-21 15:34:05,273 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:05,274 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] User not found in cache, Getting form API.
+2020-01-21 15:34:05,274 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user for username: sdfds from API.
+2020-01-21 15:34:05,275 INFO com.auth.service.APIService [http-nio-8081-exec-8] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:05,299 INFO com.auth.service.APIService [http-nio-8081-exec-8] 404 : [{"timestamp":"2020-01-21T10:04:05.295+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:05,453 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:05,454 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:05,456 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:05,457 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Authenticating for username: sdfds
+2020-01-21 15:34:05,457 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:05,458 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] User not found in cache, Getting form API.
+2020-01-21 15:34:05,458 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user for username: sdfds from API.
+2020-01-21 15:34:05,459 INFO com.auth.service.APIService [http-nio-8081-exec-9] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:05,463 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Invalid credentials for username: sdfds
+2020-01-21 15:34:05,464 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] INVALID_CREDENTIALS
+2020-01-21 15:34:05,495 INFO com.auth.service.APIService [http-nio-8081-exec-9] 404 : [{"timestamp":"2020-01-21T10:04:05.491+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:05,619 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:05,619 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:05,622 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:05,622 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Authenticating for username: sdfds
+2020-01-21 15:34:05,623 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:05,623 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] User not found in cache, Getting form API.
+2020-01-21 15:34:05,624 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user for username: sdfds from API.
+2020-01-21 15:34:05,625 INFO com.auth.service.APIService [http-nio-8081-exec-10] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:05,648 INFO com.auth.service.APIService [http-nio-8081-exec-10] 404 : [{"timestamp":"2020-01-21T10:04:05.645+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:05,659 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Invalid credentials for username: sdfds
+2020-01-21 15:34:05,660 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] INVALID_CREDENTIALS
+2020-01-21 15:34:05,785 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:05,786 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:05,790 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:05,792 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: sdfds
+2020-01-21 15:34:05,792 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:05,793 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 15:34:05,793 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: sdfds from API.
+2020-01-21 15:34:05,794 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:05,817 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Invalid credentials for username: sdfds
+2020-01-21 15:34:05,818 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] INVALID_CREDENTIALS
+2020-01-21 15:34:05,818 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T10:04:05.813+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:05,980 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: sdfds
+2020-01-21 15:34:05,981 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 15:34:06,090 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:06,091 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:06,093 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:06,094 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Authenticating for username: sdfds
+2020-01-21 15:34:06,095 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:06,095 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] User not found in cache, Getting form API.
+2020-01-21 15:34:06,096 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user for username: sdfds from API.
+2020-01-21 15:34:06,096 INFO com.auth.service.APIService [http-nio-8081-exec-2] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:06,115 INFO com.auth.service.APIService [http-nio-8081-exec-2] 404 : [{"timestamp":"2020-01-21T10:04:06.112+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:06,270 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:06,271 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:06,273 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:06,274 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: sdfds
+2020-01-21 15:34:06,274 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:06,275 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 15:34:06,276 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: sdfds from API.
+2020-01-21 15:34:06,277 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:06,278 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Invalid credentials for username: sdfds
+2020-01-21 15:34:06,279 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] INVALID_CREDENTIALS
+2020-01-21 15:34:06,312 INFO com.auth.service.APIService [http-nio-8081-exec-3] 404 : [{"timestamp":"2020-01-21T10:04:06.308+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:06,406 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:06,406 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:06,408 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:06,409 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Authenticating for username: sdfds
+2020-01-21 15:34:06,410 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:06,410 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] User not found in cache, Getting form API.
+2020-01-21 15:34:06,411 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user for username: sdfds from API.
+2020-01-21 15:34:06,412 INFO com.auth.service.APIService [http-nio-8081-exec-4] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:06,447 INFO com.auth.service.APIService [http-nio-8081-exec-4] 404 : [{"timestamp":"2020-01-21T10:04:06.442+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:06,495 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Invalid credentials for username: sdfds
+2020-01-21 15:34:06,496 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] INVALID_CREDENTIALS
+2020-01-21 15:34:06,585 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:06,585 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:06,587 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Authenticating jwtRequest for username: sdfds
+2020-01-21 15:34:06,588 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Authenticating for username: sdfds
+2020-01-21 15:34:06,589 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 15:34:06,589 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] User not found in cache, Getting form API.
+2020-01-21 15:34:06,589 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user for username: sdfds from API.
+2020-01-21 15:34:06,590 INFO com.auth.service.APIService [http-nio-8081-exec-5] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:06,616 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Invalid credentials for username: sdfds
+2020-01-21 15:34:06,617 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] INVALID_CREDENTIALS
+2020-01-21 15:34:06,617 INFO com.auth.service.APIService [http-nio-8081-exec-5] 404 : [{"timestamp":"2020-01-21T10:04:06.612+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:06,778 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Invalid credentials for username: sdfds
+2020-01-21 15:34:06,779 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] INVALID_CREDENTIALS
+2020-01-21 15:34:29,850 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:29,850 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:29,852 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:34:29,853 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Authenticating for username: sdfsd
+2020-01-21 15:34:29,853 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:34:29,854 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] User not found in cache, Getting form API.
+2020-01-21 15:34:29,854 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user for username: sdfsd from API.
+2020-01-21 15:34:29,854 INFO com.auth.service.APIService [http-nio-8081-exec-6] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:29,878 INFO com.auth.service.APIService [http-nio-8081-exec-6] 404 : [{"timestamp":"2020-01-21T10:04:29.874+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:30,035 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Invalid credentials for username: sdfsd
+2020-01-21 15:34:30,036 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] INVALID_CREDENTIALS
+2020-01-21 15:34:30,300 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:30,301 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:30,304 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:34:30,304 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Authenticating for username: sdfsd
+2020-01-21 15:34:30,305 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:34:30,305 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] User not found in cache, Getting form API.
+2020-01-21 15:34:30,306 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user for username: sdfsd from API.
+2020-01-21 15:34:30,306 INFO com.auth.service.APIService [http-nio-8081-exec-7] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:30,327 INFO com.auth.service.APIService [http-nio-8081-exec-7] 404 : [{"timestamp":"2020-01-21T10:04:30.322+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:30,464 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:30,465 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:30,467 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:34:30,467 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Authenticating for username: sdfsd
+2020-01-21 15:34:30,467 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:34:30,468 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] User not found in cache, Getting form API.
+2020-01-21 15:34:30,468 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user for username: sdfsd from API.
+2020-01-21 15:34:30,469 INFO com.auth.service.APIService [http-nio-8081-exec-8] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:30,492 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Invalid credentials for username: sdfsd
+2020-01-21 15:34:30,493 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] INVALID_CREDENTIALS
+2020-01-21 15:34:30,499 INFO com.auth.service.APIService [http-nio-8081-exec-8] 404 : [{"timestamp":"2020-01-21T10:04:30.491+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:30,610 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:30,611 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:30,613 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:34:30,614 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Authenticating for username: sdfsd
+2020-01-21 15:34:30,614 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:34:30,615 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] User not found in cache, Getting form API.
+2020-01-21 15:34:30,615 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user for username: sdfsd from API.
+2020-01-21 15:34:30,615 INFO com.auth.service.APIService [http-nio-8081-exec-9] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:30,640 INFO com.auth.service.APIService [http-nio-8081-exec-9] 404 : [{"timestamp":"2020-01-21T10:04:30.636+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:30,677 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Invalid credentials for username: sdfsd
+2020-01-21 15:34:30,677 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] INVALID_CREDENTIALS
+2020-01-21 15:34:30,805 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Invalid credentials for username: sdfsd
+2020-01-21 15:34:30,806 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] INVALID_CREDENTIALS
+2020-01-21 15:34:31,117 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:31,117 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:31,119 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:34:31,120 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Authenticating for username: sdfsd
+2020-01-21 15:34:31,120 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:34:31,121 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] User not found in cache, Getting form API.
+2020-01-21 15:34:31,122 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user for username: sdfsd from API.
+2020-01-21 15:34:31,122 INFO com.auth.service.APIService [http-nio-8081-exec-10] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:31,142 INFO com.auth.service.APIService [http-nio-8081-exec-10] 404 : [{"timestamp":"2020-01-21T10:04:31.137+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:31,262 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:34:31,262 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:34:31,264 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:34:31,265 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: sdfsd
+2020-01-21 15:34:31,265 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:34:31,265 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 15:34:31,266 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: sdfsd from API.
+2020-01-21 15:34:31,266 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:34:31,299 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T10:04:31.291+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:34:31,311 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Invalid credentials for username: sdfsd
+2020-01-21 15:34:31,312 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] INVALID_CREDENTIALS
+2020-01-21 15:34:31,481 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: sdfsd
+2020-01-21 15:34:31,482 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 15:35:37,175 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:35:37,175 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:35:37,178 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:35:37,179 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Authenticating for username: sdfsd
+2020-01-21 15:35:37,179 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:35:37,180 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] User not found in cache, Getting form API.
+2020-01-21 15:35:37,180 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user for username: sdfsd from API.
+2020-01-21 15:35:37,181 INFO com.auth.service.APIService [http-nio-8081-exec-5] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:35:37,215 INFO com.auth.service.APIService [http-nio-8081-exec-5] 404 : [{"timestamp":"2020-01-21T10:05:37.204+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:35:37,379 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Invalid credentials for username: sdfsd
+2020-01-21 15:35:37,380 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] INVALID_CREDENTIALS
+2020-01-21 15:35:49,279 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:35:49,279 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:35:49,281 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] Authenticating jwtRequest for username: sdfsd
+2020-01-21 15:35:49,282 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Authenticating for username: sdfsd
+2020-01-21 15:35:49,283 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 15:35:49,284 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] User not found in cache, Getting form API.
+2020-01-21 15:35:49,285 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user for username: sdfsd from API.
+2020-01-21 15:35:49,285 INFO com.auth.service.APIService [http-nio-8081-exec-6] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:35:49,308 INFO com.auth.service.APIService [http-nio-8081-exec-6] 404 : [{"timestamp":"2020-01-21T10:05:49.302+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 15:35:49,472 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Invalid credentials for username: sdfsd
+2020-01-21 15:35:49,473 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] INVALID_CREDENTIALS
+2020-01-21 15:38:43,922 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:38:43,923 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:38:43,925 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] Authenticating jwtRequest for username: sefsdf
+2020-01-21 15:38:43,926 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Authenticating for username: sefsdf
+2020-01-21 15:38:43,926 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user details in UserDetailsService for username: sefsdf
+2020-01-21 15:38:43,927 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] User not found in cache, Getting form API.
+2020-01-21 15:38:43,927 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user for username: sefsdf from API.
+2020-01-21 15:38:43,928 INFO com.auth.service.APIService [http-nio-8081-exec-8] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:38:43,961 INFO com.auth.service.APIService [http-nio-8081-exec-8] 404 : [{"timestamp":"2020-01-21T10:08:43.954+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6896 bytes)]
+2020-01-21 15:38:44,122 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Invalid credentials for username: sefsdf
+2020-01-21 15:38:44,122 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] INVALID_CREDENTIALS
+2020-01-21 15:39:21,428 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:39:21,428 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:39:21,431 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] Authenticating jwtRequest for username: dgfd
+2020-01-21 15:39:21,431 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Authenticating for username: dgfd
+2020-01-21 15:39:21,432 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user details in UserDetailsService for username: dgfd
+2020-01-21 15:39:21,433 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] User not found in cache, Getting form API.
+2020-01-21 15:39:21,433 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user for username: dgfd from API.
+2020-01-21 15:39:21,434 INFO com.auth.service.APIService [http-nio-8081-exec-9] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:39:21,472 INFO com.auth.service.APIService [http-nio-8081-exec-9] 404 : [{"timestamp":"2020-01-21T10:09:21.466+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 15:39:21,637 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Invalid credentials for username: dgfd
+2020-01-21 15:39:21,637 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] INVALID_CREDENTIALS
+2020-01-21 15:51:48,572 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:51:48,573 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:51:48,575 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: sdfd
+2020-01-21 15:51:48,576 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: sdfd
+2020-01-21 15:51:48,576 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: sdfd
+2020-01-21 15:51:48,576 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 15:51:48,577 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: sdfd from API.
+2020-01-21 15:51:48,577 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:51:48,607 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T10:21:48.600+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 15:51:48,766 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: sdfd
+2020-01-21 15:51:48,766 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 15:54:08,019 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 15:54:08,019 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 15:54:08,022 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: sdfd
+2020-01-21 15:54:08,022 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: sdfd
+2020-01-21 15:54:08,023 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: sdfd
+2020-01-21 15:54:08,024 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 15:54:08,024 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: sdfd from API.
+2020-01-21 15:54:08,025 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 15:54:08,090 INFO com.auth.service.APIService [http-nio-8081-exec-3] 404 : [{"timestamp":"2020-01-21T10:24:08.061+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 15:54:08,264 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Invalid credentials for username: sdfd
+2020-01-21 15:54:08,264 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] INVALID_CREDENTIALS
+2020-01-21 16:00:14,254 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:00:14,255 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:00:14,258 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Authenticating jwtRequest for username: asds
+2020-01-21 16:00:14,258 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Authenticating for username: asds
+2020-01-21 16:00:14,259 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user details in UserDetailsService for username: asds
+2020-01-21 16:00:14,262 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] User not found in cache, Getting form API.
+2020-01-21 16:00:14,264 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user for username: asds from API.
+2020-01-21 16:00:14,265 INFO com.auth.service.APIService [http-nio-8081-exec-5] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:00:14,324 INFO com.auth.service.APIService [http-nio-8081-exec-5] 404 : [{"timestamp":"2020-01-21T10:30:14.298+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 16:00:14,491 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Invalid credentials for username: asds
+2020-01-21 16:00:14,492 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] INVALID_CREDENTIALS
+2020-01-21 16:02:50,340 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:02:50,341 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:02:50,351 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] Authenticating jwtRequest for username: sdsd
+2020-01-21 16:02:50,351 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Authenticating for username: sdsd
+2020-01-21 16:02:50,352 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user details in UserDetailsService for username: sdsd
+2020-01-21 16:02:50,353 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] User not found in cache, Getting form API.
+2020-01-21 16:02:50,353 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user for username: sdsd from API.
+2020-01-21 16:02:50,354 INFO com.auth.service.APIService [http-nio-8081-exec-7] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:02:50,391 INFO com.auth.service.APIService [http-nio-8081-exec-7] 404 : [{"timestamp":"2020-01-21T10:32:50.383+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 16:02:50,553 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Invalid credentials for username: sdsd
+2020-01-21 16:02:50,554 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] INVALID_CREDENTIALS
+2020-01-21 16:03:32,748 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:03:32,748 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:03:32,750 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] Authenticating jwtRequest for username: sdfsd
+2020-01-21 16:03:32,751 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Authenticating for username: sdfsd
+2020-01-21 16:03:32,751 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 16:03:32,752 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] User not found in cache, Getting form API.
+2020-01-21 16:03:32,752 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user for username: sdfsd from API.
+2020-01-21 16:03:32,753 INFO com.auth.service.APIService [http-nio-8081-exec-8] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:03:32,784 INFO com.auth.service.APIService [http-nio-8081-exec-8] 404 : [{"timestamp":"2020-01-21T10:33:32.774+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:03:32,947 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Invalid credentials for username: sdfsd
+2020-01-21 16:03:32,948 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] INVALID_CREDENTIALS
+2020-01-21 16:04:56,074 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:04:56,075 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:04:56,078 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] Authenticating jwtRequest for username: sfs
+2020-01-21 16:04:56,078 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Authenticating for username: sfs
+2020-01-21 16:04:56,079 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user details in UserDetailsService for username: sfs
+2020-01-21 16:04:56,079 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] User not found in cache, Getting form API.
+2020-01-21 16:04:56,080 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user for username: sfs from API.
+2020-01-21 16:04:56,080 INFO com.auth.service.APIService [http-nio-8081-exec-10] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:04:56,109 INFO com.auth.service.APIService [http-nio-8081-exec-10] 404 : [{"timestamp":"2020-01-21T10:34:56.102+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6887 bytes)]
+2020-01-21 16:04:56,273 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Invalid credentials for username: sfs
+2020-01-21 16:04:56,274 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] INVALID_CREDENTIALS
+2020-01-21 16:04:56,807 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:04:56,807 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:04:56,809 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: sfs
+2020-01-21 16:04:56,810 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: sfs
+2020-01-21 16:04:56,810 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: sfs
+2020-01-21 16:04:56,811 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 16:04:56,811 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: sfs from API.
+2020-01-21 16:04:56,812 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:04:56,840 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T10:34:56.834+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6887 bytes)]
+2020-01-21 16:04:56,966 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:04:56,967 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:04:56,969 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] Authenticating jwtRequest for username: sfs
+2020-01-21 16:04:56,969 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Authenticating for username: sfs
+2020-01-21 16:04:56,970 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user details in UserDetailsService for username: sfs
+2020-01-21 16:04:56,970 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] User not found in cache, Getting form API.
+2020-01-21 16:04:56,971 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user for username: sfs from API.
+2020-01-21 16:04:56,971 INFO com.auth.service.APIService [http-nio-8081-exec-2] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:04:56,993 INFO com.auth.service.APIService [http-nio-8081-exec-2] 404 : [{"timestamp":"2020-01-21T10:34:56.989+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6887 bytes)]
+2020-01-21 16:04:57,011 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: sfs
+2020-01-21 16:04:57,011 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 16:04:57,133 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:04:57,134 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:04:57,135 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: sfs
+2020-01-21 16:04:57,136 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: sfs
+2020-01-21 16:04:57,137 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: sfs
+2020-01-21 16:04:57,137 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 16:04:57,138 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: sfs from API.
+2020-01-21 16:04:57,138 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:04:57,161 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Invalid credentials for username: sfs
+2020-01-21 16:04:57,162 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] INVALID_CREDENTIALS
+2020-01-21 16:04:57,169 INFO com.auth.service.APIService [http-nio-8081-exec-3] 404 : [{"timestamp":"2020-01-21T10:34:57.159+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6887 bytes)]
+2020-01-21 16:04:57,319 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:04:57,319 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:04:57,321 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] Authenticating jwtRequest for username: sfs
+2020-01-21 16:04:57,322 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Authenticating for username: sfs
+2020-01-21 16:04:57,322 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user details in UserDetailsService for username: sfs
+2020-01-21 16:04:57,323 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] User not found in cache, Getting form API.
+2020-01-21 16:04:57,323 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user for username: sfs from API.
+2020-01-21 16:04:57,324 INFO com.auth.service.APIService [http-nio-8081-exec-4] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:04:57,337 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Invalid credentials for username: sfs
+2020-01-21 16:04:57,339 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] INVALID_CREDENTIALS
+2020-01-21 16:04:57,353 INFO com.auth.service.APIService [http-nio-8081-exec-4] 404 : [{"timestamp":"2020-01-21T10:34:57.346+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6887 bytes)]
+2020-01-21 16:04:57,469 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:04:57,470 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-5] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:04:57,471 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] Authenticating jwtRequest for username: sfs
+2020-01-21 16:04:57,472 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Authenticating for username: sfs
+2020-01-21 16:04:57,473 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user details in UserDetailsService for username: sfs
+2020-01-21 16:04:57,473 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] User not found in cache, Getting form API.
+2020-01-21 16:04:57,473 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-5] Getting user for username: sfs from API.
+2020-01-21 16:04:57,474 INFO com.auth.service.APIService [http-nio-8081-exec-5] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:04:57,505 INFO com.auth.service.APIService [http-nio-8081-exec-5] 404 : [{"timestamp":"2020-01-21T10:34:57.499+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6887 bytes)]
+2020-01-21 16:04:57,520 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Invalid credentials for username: sfs
+2020-01-21 16:04:57,521 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] INVALID_CREDENTIALS
+2020-01-21 16:04:57,675 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-5] Invalid credentials for username: sfs
+2020-01-21 16:04:57,677 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-5] INVALID_CREDENTIALS
+2020-01-21 16:05:57,484 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:05:57,484 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:05:57,486 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] Authenticating jwtRequest for username: sfs
+2020-01-21 16:05:57,489 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Authenticating for username: sfs
+2020-01-21 16:05:57,491 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user details in UserDetailsService for username: sfs
+2020-01-21 16:05:57,491 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] User not found in cache, Getting form API.
+2020-01-21 16:05:57,492 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user for username: sfs from API.
+2020-01-21 16:05:57,493 INFO com.auth.service.APIService [http-nio-8081-exec-6] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:05:57,526 INFO com.auth.service.APIService [http-nio-8081-exec-6] 404 : [{"timestamp":"2020-01-21T10:35:57.520+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6887 bytes)]
+2020-01-21 16:05:57,689 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Invalid credentials for username: sfs
+2020-01-21 16:05:57,690 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] INVALID_CREDENTIALS
+2020-01-21 16:10:15,006 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:10:15,007 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:10:15,009 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] Authenticating jwtRequest for username: xgdfg
+2020-01-21 16:10:15,010 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Authenticating for username: xgdfg
+2020-01-21 16:10:15,010 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user details in UserDetailsService for username: xgdfg
+2020-01-21 16:10:15,010 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] User not found in cache, Getting form API.
+2020-01-21 16:10:15,011 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user for username: xgdfg from API.
+2020-01-21 16:10:15,011 INFO com.auth.service.APIService [http-nio-8081-exec-9] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:10:15,035 INFO com.auth.service.APIService [http-nio-8081-exec-9] 404 : [{"timestamp":"2020-01-21T10:40:15.031+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:10:15,195 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Invalid credentials for username: xgdfg
+2020-01-21 16:10:15,196 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] INVALID_CREDENTIALS
+2020-01-21 16:10:46,284 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:10:46,284 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:10:46,287 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] Authenticating jwtRequest for username: sdfds
+2020-01-21 16:10:46,289 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Authenticating for username: sdfds
+2020-01-21 16:10:46,291 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 16:10:46,291 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] User not found in cache, Getting form API.
+2020-01-21 16:10:46,292 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user for username: sdfds from API.
+2020-01-21 16:10:46,293 INFO com.auth.service.APIService [http-nio-8081-exec-10] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:10:46,333 INFO com.auth.service.APIService [http-nio-8081-exec-10] 404 : [{"timestamp":"2020-01-21T10:40:46.325+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:10:46,503 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Invalid credentials for username: sdfds
+2020-01-21 16:10:46,504 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] INVALID_CREDENTIALS
+2020-01-21 16:10:47,855 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:10:47,855 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:10:47,857 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: sdfds
+2020-01-21 16:10:47,858 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: sdfds
+2020-01-21 16:10:47,858 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 16:10:47,859 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 16:10:47,859 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: sdfds from API.
+2020-01-21 16:10:47,860 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:10:47,881 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T10:40:47.877+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:10:48,029 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:10:48,029 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:10:48,031 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] Authenticating jwtRequest for username: sdfds
+2020-01-21 16:10:48,031 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Authenticating for username: sdfds
+2020-01-21 16:10:48,031 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 16:10:48,034 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] User not found in cache, Getting form API.
+2020-01-21 16:10:48,034 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user for username: sdfds from API.
+2020-01-21 16:10:48,035 INFO com.auth.service.APIService [http-nio-8081-exec-2] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:10:48,042 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: sdfds
+2020-01-21 16:10:48,043 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 16:10:48,059 INFO com.auth.service.APIService [http-nio-8081-exec-2] 404 : [{"timestamp":"2020-01-21T10:40:48.053+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:10:48,191 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:10:48,192 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:10:48,194 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: sdfds
+2020-01-21 16:10:48,194 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: sdfds
+2020-01-21 16:10:48,195 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 16:10:48,195 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 16:10:48,196 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: sdfds from API.
+2020-01-21 16:10:48,196 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:10:48,223 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Invalid credentials for username: sdfds
+2020-01-21 16:10:48,224 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] INVALID_CREDENTIALS
+2020-01-21 16:10:48,235 INFO com.auth.service.APIService [http-nio-8081-exec-3] 404 : [{"timestamp":"2020-01-21T10:40:48.219+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:10:48,355 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:10:48,356 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:10:48,359 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] Authenticating jwtRequest for username: sdfds
+2020-01-21 16:10:48,359 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Authenticating for username: sdfds
+2020-01-21 16:10:48,360 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 16:10:48,361 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] User not found in cache, Getting form API.
+2020-01-21 16:10:48,361 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user for username: sdfds from API.
+2020-01-21 16:10:48,362 INFO com.auth.service.APIService [http-nio-8081-exec-4] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:10:48,389 INFO com.auth.service.APIService [http-nio-8081-exec-4] 404 : [{"timestamp":"2020-01-21T10:40:48.383+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:10:48,439 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Invalid credentials for username: sdfds
+2020-01-21 16:10:48,440 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] INVALID_CREDENTIALS
+2020-01-21 16:10:48,566 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Invalid credentials for username: sdfds
+2020-01-21 16:10:48,567 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] INVALID_CREDENTIALS
+2020-01-21 16:13:55,195 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:13:55,196 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-7] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:13:55,207 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] Authenticating jwtRequest for username: sdfs
+2020-01-21 16:13:55,208 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Authenticating for username: sdfs
+2020-01-21 16:13:55,208 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user details in UserDetailsService for username: sdfs
+2020-01-21 16:13:55,209 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] User not found in cache, Getting form API.
+2020-01-21 16:13:55,210 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-7] Getting user for username: sdfs from API.
+2020-01-21 16:13:55,211 INFO com.auth.service.APIService [http-nio-8081-exec-7] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:13:55,256 INFO com.auth.service.APIService [http-nio-8081-exec-7] 404 : [{"timestamp":"2020-01-21T10:43:55.245+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 16:13:55,428 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-7] Invalid credentials for username: sdfs
+2020-01-21 16:13:55,428 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-7] INVALID_CREDENTIALS
+2020-01-21 16:14:30,386 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:14:30,386 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:14:30,388 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] Authenticating jwtRequest for username: sdfsd
+2020-01-21 16:14:30,389 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Authenticating for username: sdfsd
+2020-01-21 16:14:30,389 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user details in UserDetailsService for username: sdfsd
+2020-01-21 16:14:30,390 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] User not found in cache, Getting form API.
+2020-01-21 16:14:30,390 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user for username: sdfsd from API.
+2020-01-21 16:14:30,390 INFO com.auth.service.APIService [http-nio-8081-exec-8] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:14:30,429 INFO com.auth.service.APIService [http-nio-8081-exec-8] 404 : [{"timestamp":"2020-01-21T10:44:30.423+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:14:30,591 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Invalid credentials for username: sdfsd
+2020-01-21 16:14:30,591 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] INVALID_CREDENTIALS
+2020-01-21 16:14:49,494 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:14:49,495 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:14:49,497 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] Authenticating jwtRequest for username: sdgfd
+2020-01-21 16:14:49,497 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Authenticating for username: sdgfd
+2020-01-21 16:14:49,498 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user details in UserDetailsService for username: sdgfd
+2020-01-21 16:14:49,498 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] User not found in cache, Getting form API.
+2020-01-21 16:14:49,499 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user for username: sdgfd from API.
+2020-01-21 16:14:49,499 INFO com.auth.service.APIService [http-nio-8081-exec-9] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:14:49,532 INFO com.auth.service.APIService [http-nio-8081-exec-9] 404 : [{"timestamp":"2020-01-21T10:44:49.526+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:14:49,694 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Invalid credentials for username: sdgfd
+2020-01-21 16:14:49,694 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] INVALID_CREDENTIALS
+2020-01-21 16:15:37,100 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:15:37,100 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-10] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:15:37,103 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] Authenticating jwtRequest for username: sfsd
+2020-01-21 16:15:37,104 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Authenticating for username: sfsd
+2020-01-21 16:15:37,105 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user details in UserDetailsService for username: sfsd
+2020-01-21 16:15:37,106 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] User not found in cache, Getting form API.
+2020-01-21 16:15:37,106 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-10] Getting user for username: sfsd from API.
+2020-01-21 16:15:37,107 INFO com.auth.service.APIService [http-nio-8081-exec-10] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:15:37,132 INFO com.auth.service.APIService [http-nio-8081-exec-10] 404 : [{"timestamp":"2020-01-21T10:45:37.124+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 16:15:37,294 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-10] Invalid credentials for username: sfsd
+2020-01-21 16:15:37,294 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-10] INVALID_CREDENTIALS
+2020-01-21 16:19:28,139 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:19:28,139 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:19:28,144 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] Authenticating jwtRequest for username: dxfsd
+2020-01-21 16:19:28,145 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Authenticating for username: dxfsd
+2020-01-21 16:19:28,146 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user details in UserDetailsService for username: dxfsd
+2020-01-21 16:19:28,146 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] User not found in cache, Getting form API.
+2020-01-21 16:19:28,147 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user for username: dxfsd from API.
+2020-01-21 16:19:28,147 INFO com.auth.service.APIService [http-nio-8081-exec-2] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:19:28,182 INFO com.auth.service.APIService [http-nio-8081-exec-2] 404 : [{"timestamp":"2020-01-21T10:49:28.173+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:19:28,379 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Invalid credentials for username: dxfsd
+2020-01-21 16:19:28,380 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] INVALID_CREDENTIALS
+2020-01-21 16:20:50,180 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:20:50,180 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:20:50,183 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] Authenticating jwtRequest for username: sf
+2020-01-21 16:20:50,184 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Authenticating for username: sf
+2020-01-21 16:20:50,185 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user details in UserDetailsService for username: sf
+2020-01-21 16:20:50,186 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] User not found in cache, Getting form API.
+2020-01-21 16:20:50,187 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user for username: sf from API.
+2020-01-21 16:20:50,187 INFO com.auth.service.APIService [http-nio-8081-exec-4] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:20:50,222 INFO com.auth.service.APIService [http-nio-8081-exec-4] 404 : [{"timestamp":"2020-01-21T10:50:50.215+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6884 bytes)]
+2020-01-21 16:20:50,390 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Invalid credentials for username: sf
+2020-01-21 16:20:50,390 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] INVALID_CREDENTIALS
+2020-01-21 16:26:33,713 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:26:33,714 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-6] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:26:33,716 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] Authenticating jwtRequest for username: dfgdf
+2020-01-21 16:26:33,716 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Authenticating for username: dfgdf
+2020-01-21 16:26:33,717 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user details in UserDetailsService for username: dfgdf
+2020-01-21 16:26:33,717 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] User not found in cache, Getting form API.
+2020-01-21 16:26:33,718 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-6] Getting user for username: dfgdf from API.
+2020-01-21 16:26:33,719 INFO com.auth.service.APIService [http-nio-8081-exec-6] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:26:33,750 INFO com.auth.service.APIService [http-nio-8081-exec-6] 404 : [{"timestamp":"2020-01-21T10:56:33.746+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:26:33,908 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-6] Invalid credentials for username: dfgdf
+2020-01-21 16:26:33,908 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-6] INVALID_CREDENTIALS
+2020-01-21 16:27:48,228 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:27:48,229 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-8] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:27:48,232 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] Authenticating jwtRequest for username: sfsdf
+2020-01-21 16:27:48,233 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Authenticating for username: sfsdf
+2020-01-21 16:27:48,233 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user details in UserDetailsService for username: sfsdf
+2020-01-21 16:27:48,233 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] User not found in cache, Getting form API.
+2020-01-21 16:27:48,234 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-8] Getting user for username: sfsdf from API.
+2020-01-21 16:27:48,234 INFO com.auth.service.APIService [http-nio-8081-exec-8] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:27:48,275 INFO com.auth.service.APIService [http-nio-8081-exec-8] 404 : [{"timestamp":"2020-01-21T10:57:48.265+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:27:48,440 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-8] Invalid credentials for username: sfsdf
+2020-01-21 16:27:48,440 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-8] INVALID_CREDENTIALS
+2020-01-21 16:28:17,033 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:28:17,033 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-9] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:28:17,034 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] Authenticating jwtRequest for username: sfds
+2020-01-21 16:28:17,035 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Authenticating for username: sfds
+2020-01-21 16:28:17,035 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user details in UserDetailsService for username: sfds
+2020-01-21 16:28:17,036 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] User not found in cache, Getting form API.
+2020-01-21 16:28:17,036 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-9] Getting user for username: sfds from API.
+2020-01-21 16:28:17,037 INFO com.auth.service.APIService [http-nio-8081-exec-9] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:28:17,072 INFO com.auth.service.APIService [http-nio-8081-exec-9] 404 : [{"timestamp":"2020-01-21T10:58:17.062+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 16:28:17,236 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-9] Invalid credentials for username: sfds
+2020-01-21 16:28:17,237 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-9] INVALID_CREDENTIALS
+2020-01-21 16:32:54,104 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:32:54,104 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:32:54,106 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: sdgd
+2020-01-21 16:32:54,106 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: sdgd
+2020-01-21 16:32:54,107 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: sdgd
+2020-01-21 16:32:54,109 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 16:32:54,110 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: sdgd from API.
+2020-01-21 16:32:54,111 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:32:54,144 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T11:02:54.138+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6890 bytes)]
+2020-01-21 16:32:54,319 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: sdgd
+2020-01-21 16:32:54,319 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 16:33:13,182 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:33:13,183 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-2] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:33:13,185 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] Authenticating jwtRequest for username: sdfds
+2020-01-21 16:33:13,186 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Authenticating for username: sdfds
+2020-01-21 16:33:13,187 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user details in UserDetailsService for username: sdfds
+2020-01-21 16:33:13,187 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] User not found in cache, Getting form API.
+2020-01-21 16:33:13,187 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-2] Getting user for username: sdfds from API.
+2020-01-21 16:33:13,188 INFO com.auth.service.APIService [http-nio-8081-exec-2] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:33:13,228 INFO com.auth.service.APIService [http-nio-8081-exec-2] 404 : [{"timestamp":"2020-01-21T11:03:13.223+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6893 bytes)]
+2020-01-21 16:33:13,389 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-2] Invalid credentials for username: sdfds
+2020-01-21 16:33:13,389 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-2] INVALID_CREDENTIALS
+2020-01-21 16:36:10,200 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:36:10,200 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-4] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:36:10,203 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] Authenticating jwtRequest for username: null
+2020-01-21 16:36:10,203 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Authenticating for username: null
+2020-01-21 16:36:10,204 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user details in UserDetailsService for username: NONE_PROVIDED
+2020-01-21 16:36:10,205 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] User not found in cache, Getting form API.
+2020-01-21 16:36:10,205 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-4] Getting user for username: NONE_PROVIDED from API.
+2020-01-21 16:36:10,205 INFO com.auth.service.APIService [http-nio-8081-exec-4] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:36:10,234 INFO com.auth.service.APIService [http-nio-8081-exec-4] 404 : [{"timestamp":"2020-01-21T11:06:10.230+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6917 bytes)]
+2020-01-21 16:36:10,235 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-4] Invalid credentials for username: null
+2020-01-21 16:36:10,236 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-4] INVALID_CREDENTIALS
+2020-01-21 16:37:52,062 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting AuthManagementApplication on ubuntu-pc with PID 18774 (/media/rajan/HardDrive/project/repo/apps/auth-management/target/classes started by rajan in /media/rajan/HardDrive/project/repo/apps/auth-management)
+2020-01-21 16:37:52,071 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-21 16:37:52,073 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: test
+2020-01-21 16:37:52,282 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-01-21 16:37:52,283 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-01-21 16:37:56,001 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2020-01-21 16:37:56,029 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2020-01-21 16:37:56,031 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-01-21 16:37:56,032 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-21 16:37:56,205 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-01-21 16:37:56,205 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3921 ms
+2020-01-21 16:37:56,666 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'requestFilter' configured for use
+2020-01-21 16:37:58,166 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59319b63, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d81520f, org.springframework.security.web.header.HeaderWriterFilter@6ea6d5e3, org.springframework.security.web.authentication.logout.LogoutFilter@a20bc1e, com.auth.filter.RequestFilter@7549e6c1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40dbb071, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17fb147f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11c7d472, org.springframework.security.web.session.SessionManagementFilter@bbbe902, org.springframework.security.web.access.ExceptionTranslationFilter@cd321b5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75f6d013]
+2020-01-21 16:37:58,692 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-21 16:37:59,446 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-01-21 16:37:59,530 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2020-01-21 16:37:59,691 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2020-01-21 16:37:59,701 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AuthManagementApplication in 9.646 seconds (JVM running for 11.772)
+2020-01-21 16:38:01,883 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-21 16:38:01,885 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-21 16:38:01,910 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 25 ms
+2020-01-21 16:38:01,959 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:38:01,960 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:38:02,182 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: null
+2020-01-21 16:38:02,183 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: null
+2020-01-21 16:38:02,381 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: NONE_PROVIDED
+2020-01-21 16:38:02,383 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 16:38:02,385 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: NONE_PROVIDED from API.
+2020-01-21 16:38:02,385 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:38:02,506 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T11:08:02.476+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6917 bytes)]
+2020-01-21 16:38:02,509 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: null
+2020-01-21 16:38:02,510 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 16:40:28,089 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting AuthManagementApplication on ubuntu-pc with PID 18924 (/media/rajan/HardDrive/project/repo/apps/auth-management/target/classes started by rajan in /media/rajan/HardDrive/project/repo/apps/auth-management)
+2020-01-21 16:40:28,120 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-21 16:40:28,120 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: test
+2020-01-21 16:40:28,390 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-01-21 16:40:28,391 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-01-21 16:40:31,144 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2020-01-21 16:40:31,169 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2020-01-21 16:40:31,171 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-01-21 16:40:31,172 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-21 16:40:31,311 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-01-21 16:40:31,312 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2921 ms
+2020-01-21 16:40:31,470 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'requestFilter' configured for use
+2020-01-21 16:40:32,161 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2537a9e6, org.springframework.security.web.context.SecurityContextPersistenceFilter@51045053, org.springframework.security.web.header.HeaderWriterFilter@4da16aa8, org.springframework.security.web.authentication.logout.LogoutFilter@46c33a11, com.auth.filter.RequestFilter@39ca5088, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cd739a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5891663a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75030001, org.springframework.security.web.session.SessionManagementFilter@1791142, org.springframework.security.web.access.ExceptionTranslationFilter@1f2a5b72, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c7875ae]
+2020-01-21 16:40:32,440 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-21 16:40:32,811 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-01-21 16:40:32,857 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2020-01-21 16:40:32,912 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2020-01-21 16:40:32,919 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AuthManagementApplication in 6.922 seconds (JVM running for 9.101)
+2020-01-21 16:40:43,705 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-21 16:40:43,706 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-21 16:40:43,738 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 32 ms
+2020-01-21 16:40:43,788 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:40:43,789 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:40:44,101 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: null
+2020-01-21 16:40:44,102 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: null
+2020-01-21 16:40:44,382 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: NONE_PROVIDED
+2020-01-21 16:40:44,383 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 16:40:44,384 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: NONE_PROVIDED from API.
+2020-01-21 16:40:44,385 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:40:44,499 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T11:10:44.474+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6917 bytes)]
+2020-01-21 16:40:44,502 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: null
+2020-01-21 16:40:44,503 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 16:43:42,992 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting AuthManagementApplication on ubuntu-pc with PID 19069 (/media/rajan/HardDrive/project/repo/apps/auth-management/target/classes started by rajan in /media/rajan/HardDrive/project/repo/apps/auth-management)
+2020-01-21 16:43:43,002 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-01-21 16:43:43,004 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: test
+2020-01-21 16:43:43,260 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-01-21 16:43:43,261 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-01-21 16:43:48,218 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2020-01-21 16:43:48,291 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2020-01-21 16:43:48,310 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-01-21 16:43:48,312 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-21 16:43:48,568 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-01-21 16:43:48,569 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 5307 ms
+2020-01-21 16:43:48,766 DEBUG org.springframework.web.filter.GenericFilterBean [restartedMain] Filter 'requestFilter' configured for use
+2020-01-21 16:43:49,878 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45871869, org.springframework.security.web.context.SecurityContextPersistenceFilter@4e4f5d09, org.springframework.security.web.header.HeaderWriterFilter@6a7128e8, org.springframework.security.web.authentication.logout.LogoutFilter@11467a2f, com.auth.filter.RequestFilter@4c4d04e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52c56621, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32e2b59d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@451f0a45, org.springframework.security.web.session.SessionManagementFilter@7ad6fb0, org.springframework.security.web.access.ExceptionTranslationFilter@5abf8c0b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c41f43d]
+2020-01-21 16:43:50,279 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-21 16:43:50,759 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-01-21 16:43:50,826 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2020-01-21 16:43:50,959 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2020-01-21 16:43:50,970 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AuthManagementApplication in 9.831 seconds (JVM running for 11.74)
+2020-01-21 16:43:58,639 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-21 16:43:58,639 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-21 16:43:58,673 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 32 ms
+2020-01-21 16:43:58,727 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:43:58,728 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-1] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:43:59,073 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] Authenticating jwtRequest for username: null
+2020-01-21 16:43:59,074 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Authenticating for username: null
+2020-01-21 16:43:59,389 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user details in UserDetailsService for username: NONE_PROVIDED
+2020-01-21 16:43:59,391 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] User not found in cache, Getting form API.
+2020-01-21 16:43:59,394 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-1] Getting user for username: NONE_PROVIDED from API.
+2020-01-21 16:43:59,396 INFO com.auth.service.APIService [http-nio-8081-exec-1] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:43:59,554 INFO com.auth.service.APIService [http-nio-8081-exec-1] 404 : [{"timestamp":"2020-01-21T11:13:59.523+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6917 bytes)]
+2020-01-21 16:43:59,560 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-1] Invalid credentials for username: null
+2020-01-21 16:43:59,561 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-1] INVALID_CREDENTIALS
+2020-01-21 16:45:00,502 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] Authenticating HttpHeaders.AUTHORIZATION token: null
+2020-01-21 16:45:00,504 INFO com.auth.filter.RequestFilter [http-nio-8081-exec-3] JWT Token is null, redirecting to the actual call.
+2020-01-21 16:45:00,508 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] Authenticating jwtRequest for username: null
+2020-01-21 16:45:00,509 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Authenticating for username: null
+2020-01-21 16:45:00,510 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user details in UserDetailsService for username: NONE_PROVIDED
+2020-01-21 16:45:00,511 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] User not found in cache, Getting form API.
+2020-01-21 16:45:00,512 INFO com.auth.service.UserDetailsServiceImpl [http-nio-8081-exec-3] Getting user for username: NONE_PROVIDED from API.
+2020-01-21 16:45:00,513 INFO com.auth.service.APIService [http-nio-8081-exec-3] Requesting API for entity: class com.auth.model.dto.UserDto
+2020-01-21 16:45:00,563 INFO com.auth.service.APIService [http-nio-8081-exec-3] 404 : [{"timestamp":"2020-01-21T11:15:00.545+0000","status":404,"error":"Not Found","message":"Can't perform action.","trace":"org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND \"Can't pe... (6917 bytes)]
+2020-01-21 16:45:00,565 INFO com.auth.controller.GenericAuthController [http-nio-8081-exec-3] Invalid credentials for username: null
+2020-01-21 16:45:00,568 INFO com.auth.controller.AuthUserController [http-nio-8081-exec-3] INVALID_CREDENTIALS

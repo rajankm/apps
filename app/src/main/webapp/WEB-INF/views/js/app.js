@@ -10,15 +10,24 @@ if (!jQuery) {throw new TypeError("jQuery is required.");};
 			$('#appModal').modal('show');
 		});
 	});
-	/*
-	$.ajax({
-		  url: "test.html",
-		  context: document.body
-		}).done(function() {
-		  $( this ).addClass( "done" );
-		});	
-	*/
-	
-	
-	
+
+	$('#myform').submit(function(e){
+		 e.preventDefault();
+		$.ajax({
+			url: $(this).attr('action'),
+			type: $(this).attr('method'),
+			contentType: "application/json; charset=utf-8",
+			dataType: 'json',
+			data: $(this).serialize()
+		}).done(function(data) {
+			if(data.status=="OK"){
+				
+			}else{
+				$('#errorSpan').empty().append(data.value).css('visibility','visible');
+			}
+		}).fail(function(data){
+			alert(JSON.stringify(data));
+		});
+	});
+
 })(jQuery, window, document);

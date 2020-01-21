@@ -26,9 +26,9 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import com.app.config.MessageConverter;
+import com.app.entity.dto.JSONResponse;
 import com.app.entity.dto.UserDto;
 
 @RestController
@@ -89,32 +89,35 @@ public class UserController extends GenericController {
 	}
 
 	@PostMapping(path = { "/login" })
-	public RedirectView login(@ModelAttribute UserDto user, HttpServletRequest request, HttpServletResponse response,
+	public JSONResponse login(@ModelAttribute UserDto user, HttpServletRequest request, HttpServletResponse response,
 			HttpSession session) {
-		RedirectView rv = new RedirectView(request.getContextPath() + "/user/login");
+		JSONResponse jsonResponse = new JSONResponse();
+		//RedirectView rv = new RedirectView(request.getContextPath() + "/user/login");
 		try {
-			logger.info("Calling user-authentication service.");
+			logger.debug("Calling user-authentication service.");
 			ResponseEntity<UserDto> responseEntity = restTemplate.postForEntity(getPropValue("url.service.auth")+"/user", user, UserDto.class);
-			logger.info("Ressponse from user-authentication:\n \t ResponseEntity:\n\t\t StatsCode: "
+			logger.debug("Ressponse from user-authentication:\n \t ResponseEntity:\n\t\t StatsCode: "
 					+ responseEntity.getStatusCodeValue());
 			if (responseEntity.getStatusCode() == HttpStatus.OK) {
 				String jwtToken = responseEntity.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
-				rv = new RedirectView(request.getContextPath() + "/home?jwtToken=" + jwtToken);
+				jsonResponse.setStatus(responseEntity.getStatusCode());
+				//rv = new RedirectView(request.getContextPath() + "/home?jwtToken=" + jwtToken);
 				user = responseEntity.getBody();
+				jsonResponse.setValue(user);
 				session.setAttribute("loggedUser", user);
 			} else {
 				logger.info("Response received: " + responseEntity);
-				rv = new RedirectView(request.getContextPath() + "/user/login");
+				//rv = new RedirectView(request.getContextPath() + "/user/login");
+				jsonResponse.setValue("Invalid credentials!");
 			}
 		} catch (Exception e) {
 			if (e instanceof ResourceAccessException) {
-				logger.error("ResourceAccessException: " + e.getMessage());
 			}
-			logger.info(e.getClass() + ": " + e.getMessage());
-			rv = new RedirectView(request.getContextPath() + "/user/login");
-			// ex.printStackTrace();
+			logger.error(e.getMessage());
+			//rv = new RedirectView(request.getContextPath() + "/user/login");
+			jsonResponse.setValue("Some error occured, please try after sometime.");
 		}
-		return rv;
+		return jsonResponse;
 	}
 
 	@GetMapping("/logout")
