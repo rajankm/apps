@@ -14,10 +14,11 @@ import org.hibernate.annotations.Parameter;
 public class Role implements EaoEntity {
 	private static final long serialVersionUID = 5071529250059322904L;
 	@Id
-    @GeneratedValue(generator = "role-generator")
+	@GeneratedValue(generator = "role-generator")
     @GenericGenerator(name = "role-generator", 
       parameters = @Parameter(name = "prefix", value = "role"), 
       strategy = "com.user.model.EntityIdGenerator")
+	@Column(name = "ID")
 	private String id;
 	
 	@Column(name="NAME")

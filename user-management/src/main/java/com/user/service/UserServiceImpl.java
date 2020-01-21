@@ -1,11 +1,13 @@
 package com.user.service;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.user.dao.UserDao;
+import com.user.exception.BadCredentialsException;
 import com.user.exception.EntityPersistanceException;
 import com.user.model.User;
 
@@ -27,13 +29,19 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 	@Override
-	public User findByUsername(String email) {
-		return userDao.findByUsername(email);
+	public User getByUsername(String username) throws EntityNotFoundException {
+		return userDao.getByUsername(username);
 	}
 
 	@Override
-	public User getByCredential(String username, String password) {
-		return null;
+	public User getByCredential(String username, String password) throws BadCredentialsException {
+		password = encoder.encode(password);
+		User user = userDao.getByUsername(username);
+		if(user.getPassword().equals(password)) {
+			return user;
+		}else {
+			throw new BadCredentialsException(username);
+		}
 	}
 
 }

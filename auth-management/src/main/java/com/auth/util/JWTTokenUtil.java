@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -19,6 +21,7 @@ public class JWTTokenUtil implements Serializable {
 
 	private static final long serialVersionUID = 3631990210064298203L;
 	public static final long JWT_TOKEN_VALIDITY = 10;
+	protected final Log logger = LogFactory.getLog(getClass());
 	
 	@Value("${jwt.secret}")
 	private String secret;
@@ -69,7 +72,9 @@ public class JWTTokenUtil implements Serializable {
 		//validate token
 		public Boolean validateToken(String token, UserDetails userDetails) {
 			final String username = getUsernameFromToken(token);
-			return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+			Boolean status = (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+			logger.info("Validating token for username and token expiry, Status: "+status);
+			return status;
 		}
 
 }

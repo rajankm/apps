@@ -1,9 +1,11 @@
 package com.user.dao;
 
 import java.io.Serializable;
+import java.util.NoSuchElementException;
 import java.util.logging.Logger;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,6 +25,7 @@ public class UserDaoImpl implements UserDao {
 	
 	@Autowired
 	//private SessionFactory sessionFactory;
+	
 	private EntityManager entityManager;
 	@Autowired
 	private UserRepository uesrRepository;
@@ -44,15 +47,14 @@ public class UserDaoImpl implements UserDao {
 			}
 		}
 	}
-	
-	public User findByUsername(String email) {
-		Example<User> example  = Example.of(new User(email));
-		return uesrRepository.findOne(example).get();
-	}
-	
 	@Override
-	public User getByCredential(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getByUsername(String username)throws EntityNotFoundException {
+		Example<User> example  = Example.of(new User(username));
+		try {
+			return uesrRepository.findOne(example).get();
+		}catch(Exception e) {
+			//e.printStackTrace();
+			throw new EntityNotFoundException("Username: "+username+" not present");
+		}
 	}
 }

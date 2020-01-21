@@ -9,20 +9,28 @@ import org.springframework.security.core.Authentication;
 
 import com.auth.util.JWTTokenUtil;
 
-public abstract class GenericAuthController {
+public abstract class GenericAuthController extends GenericController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
 	@Autowired
 	protected JWTTokenUtil jwtTokenUtil;
-	
-	protected Authentication authenticate(String username, String password)throws Exception {
+
+	protected Authentication authenticate(String username, String password) throws Exception {
 		try {
+			logger.info("Authenticating for username: " + username);
 			return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
-		} catch (DisabledException e) {
-			throw new Exception("USER_DISABLED", e);
-		} catch (BadCredentialsException e) {
-			throw new Exception("INVALID_CREDENTIALS", e);
+		} catch (Exception e) {
+			if (e instanceof DisabledException) {
+				logger.info("username: "+username +" Disabled.");
+				throw new DisabledException("USER_DISABLED", e);
+			}
+			if (e instanceof BadCredentialsException) {
+				logger.info("Invalid credentials for username: "+username);
+				throw new BadCredentialsException("INVALID_CREDENTIALS", e);
+			}else {
+				throw e;
+			}
 		}
 	}
 }

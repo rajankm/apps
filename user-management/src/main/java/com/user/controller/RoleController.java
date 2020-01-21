@@ -16,7 +16,7 @@ public class RoleController {
 	@Autowired
 	private RoleService roleService;
 	
-	@GetMapping("/default-role")
+	@GetMapping("/default")
 	public String getDefaultRole() {
 		try {
 			return roleService.getDefaultRole().getName();	

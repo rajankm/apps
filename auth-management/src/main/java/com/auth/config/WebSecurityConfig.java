@@ -20,6 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.firewall.HttpFirewall;
 import org.springframework.security.web.firewall.StrictHttpFirewall;
+import org.springframework.web.client.RestTemplate;
 
 import com.auth.filter.JwtAuthenticationEntryPoint;
 import com.auth.filter.RequestFilter;
@@ -92,6 +93,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         firewall.setAllowUrlEncodedPercent(true);
         firewall.setAllowUrlEncodedPeriod(true);
         return firewall;
+    }
+    @Bean
+    public RestTemplate getRestTemplate() {
+    	return new RestTemplate();
     }
     
 }

@@ -16,6 +16,8 @@
 	<description>User Management project for Spring Boot</description>
 
 	<properties>
+		<spring.version>5.2.1.RELEASE</spring.version>
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -27,10 +29,13 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-crypto</artifactId>
-			<version>5.2.1.RELEASE</version>
+			<!-- <version>${spring.version}</version> -->
 		</dependency>
-
-		<dependency>
+<!-- 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+ -->		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<exclusions>
@@ -66,7 +71,17 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-
+	<!-- <dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement> -->
 	<build>
 		<plugins>
 			<plugin>
@@ -75,5 +90,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

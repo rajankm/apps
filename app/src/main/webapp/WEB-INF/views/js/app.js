@@ -2,12 +2,12 @@ if (!jQuery) {throw new TypeError("jQuery is required.");};
 (function ($, window, document, undefined) {
 	'use strict';
 
-	$('#loginForm').on('click', function(){
+	$('#loginModal').on('click', function(){
 		$.ajax({
-			url:"usr/form",
+			url:"user/login",
 		}).done(function(response){
-			//$('.modal').html(response);
-			$('#modalLauncher').triggerHandler('click');
+			$('#modal').html(response);
+			$('#appModal').modal('show');
 		});
 	});
 	/*
