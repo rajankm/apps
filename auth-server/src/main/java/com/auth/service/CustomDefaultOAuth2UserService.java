@@ -22,12 +22,13 @@ import com.auth.util.AuthProvider;
 
 @Service
 public class CustomDefaultOAuth2UserService extends DefaultOAuth2UserService {
-	protected final Log logger = LogFactory.getLog(getClass());
-
+	protected static final Log logger = LogFactory.getLog(CustomDefaultOAuth2UserService.class);
+	
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
 		OAuth2User user =  super.loadUser(userRequest);
 		logger.debug("OAuth2User: " + user);
+		
 		try {
 			return processOAuth2User(userRequest, user);
 		} catch (AuthenticationException ex) {

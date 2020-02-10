@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class HomeController extends GenericController {
 	
-	@GetMapping("/login")
-	public String login() {
-		logger.debug("login page.");
-		return "login";
+	@GetMapping
+	public String home() {
+		logger.debug("home page.");
+		return "home";
 	}
 }
