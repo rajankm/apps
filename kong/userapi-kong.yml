@@ -21,9 +21,10 @@ services:
   - userapi
 routes:
 - name: userapi-route
+  service: userapi-service
+  hosts: ["userapi-service"]
   paths:
   - /userapi
-    
 #   plugins:
 #   - name: key-auth
 # - name: another-service
