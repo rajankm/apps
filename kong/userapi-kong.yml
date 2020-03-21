@@ -15,16 +15,16 @@ _format_version: "1.1"
 # can be listed in the top-level as an array of objects:
 
 services:
-- name: userapi-service
-  url: http://localhost:8082/userapi
+- name: user-service
+  url: http://localhost:8082/userservice
   tags:
   - userapi
 routes:
-- name: userapi-route
-  service: userapi-service
-  hosts: ["userapi-service"]
+- name: userservice-route
+  service: user-service
+  hosts: ["userservice"]
   paths:
-  - /userapi
+  - /userservice
 #   plugins:
 #   - name: key-auth
 # - name: another-service
